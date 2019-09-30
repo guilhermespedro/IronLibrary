@@ -9,6 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@ironh/eslint-config": "^0.0.2",
     "bcrypt": "^3.0.6",
     "connect-mongo": "^3.0.0",
     "cookie-parser": "^1.4.4",
