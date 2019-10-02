@@ -2,7 +2,15 @@
 
 const mongoose = require("mongoose");
 
-const bookSchema = new mongoose.Schema({});
+const bookSchema = new mongoose.Schema({
+  title: {},
+  thumbnail: {},
+  year: {},
+  description: {},
+  cover: {},
+  authors: {},
+  category: {}
+});
 
 const Book = mongoose.model("Book", bookSchema);
 
