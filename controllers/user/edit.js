@@ -1,14 +1,15 @@
 "use strict";
 
-const User = require("./../../models/user/user");
+const User = require("../../models/user");
 
 module.exports = (req, res, next) => {
-  const { username, email } = req.body;
+  const { name, email, url } = req.body;
   User.findByIdAndUpdate(
     req.user._id,
     {
-      ...(username && { username }),
-      ...(email && { email })
+      ...(name && { name }),
+      ...(email && { email }),
+      ...(url && { url })
     },
     { new: true }
   )

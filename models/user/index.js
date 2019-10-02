@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     trim: true,
     unique: true
   },
-  username: {
+  name: {
     type: String,
     required: true,
     trim: true
@@ -24,6 +24,16 @@ const userSchema = new mongoose.Schema({
     required: true,
     enum: ["user", "admin"],
     default: "user"
+  },
+  url: {
+    type: String
+  },
+  phoneNumber: {
+    type: Number,
+    trim: true
+  },
+  contry: {
+    type: String
   }
 });
 
