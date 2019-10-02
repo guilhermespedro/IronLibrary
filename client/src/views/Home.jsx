@@ -4,7 +4,7 @@ export default class HomeView extends Component {
   render() {
     return (
       <div>
-        <h1>MERN APP BOILERPLATE</h1>
+        <h1>A BIBLIOTECA DO PRELHAZ</h1>
       </div>
     );
   }
