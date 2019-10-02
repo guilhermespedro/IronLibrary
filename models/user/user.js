@@ -2,7 +2,7 @@
 
 const mongoose = require("mongoose");
 
-const schema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
@@ -22,7 +22,7 @@ const schema = new mongoose.Schema({
   role: {
     type: String,
     required: true,
-    enum: ["user", "editor", "admin"],
+    enum: ["user", "admin"],
     default: "user"
   }
 });
@@ -31,10 +31,10 @@ const signInStatic = require("./statics/sign-in");
 const signUpStatic = require("./statics/sign-up");
 const findByEmailStatic = require("./statics/find-by-email");
 
-schema.statics.signIn = signInStatic;
-schema.statics.signUp = signUpStatic;
-schema.statics.findByEmail = findByEmailStatic;
+userSchema.statics.signIn = signInStatic;
+userSchema.statics.signUp = signUpStatic;
+userSchema.statics.findByEmail = findByEmailStatic;
 
-const User = mongoose.model("User", schema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
