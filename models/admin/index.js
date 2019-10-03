@@ -29,6 +29,6 @@ adminSchema.statics.signIn = signInStatic;
 adminSchema.statics.signUp = signUpStatic;
 adminSchema.statics.findByEmail = findByEmailStatic;
 
-const Admin = mongoose.model("User", adminSchema);
+const Admin = mongoose.model("Admin", adminSchema);
 
 module.exports = Admin;
