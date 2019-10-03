@@ -14,6 +14,7 @@ const verifyUserController = require("../controllers/user/verify");
 const editUserController = require("./../controllers/user/edit");
 const uploadUserController = require("./../controllers/user/upload");
 
+const signUpAdminController = require("./../controllers/admin/signUp");
 const logInAdminController = require("./../controllers/admin/logIn");
 const logOutAdminController = require("./../controllers/admin/logOut");
 const verifyAdminController = require("../controllers/admin/verify");
@@ -34,6 +35,13 @@ router.post(
   logInUserController,
   logInAdminController
 );
+
+router.post(
+  "/auth/admin/sign-up",
+  routeGuardMiddleware(false),
+  signUpAdminController
+);
+
 router.post(
   "/auth/log-out",
   routeGuardMiddleware(true),
