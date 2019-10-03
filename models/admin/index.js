@@ -21,11 +21,11 @@ const adminSchema = new mongoose.Schema({
   }
 });
 
-const signInStatic = require("./statics/sign-in");
+const logInStatic = require("./statics/log-in");
 const signUpStatic = require("./statics/sign-up");
 const findByEmailStatic = require("./statics/find-by-email");
 
-adminSchema.statics.signIn = signInStatic;
+adminSchema.statics.logIn = logInStatic;
 adminSchema.statics.signUp = signUpStatic;
 adminSchema.statics.findByEmail = findByEmailStatic;
 

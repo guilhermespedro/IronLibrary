@@ -26,16 +26,16 @@ const userSchema = new mongoose.Schema({
     type: Number,
     trim: true
   },
-  contry: {
+  country: {
     type: String
   }
 });
 
-const signInStatic = require("./statics/sign-in");
+const logInStatic = require("./statics/log-in");
 const signUpStatic = require("./statics/sign-up");
 const findByEmailStatic = require("./statics/find-by-email");
 
-userSchema.statics.signIn = signInStatic;
+userSchema.statics.logIn = logInStatic;
 userSchema.statics.signUp = signUpStatic;
 userSchema.statics.findByEmail = findByEmailStatic;
 

@@ -6,22 +6,22 @@ const bcrypt = require("bcryptjs");
 module.exports = function({ email, password }) {
   const Model = this;
 
-  let auxiliaryUser;
+  let auxiliaryAdmin;
 
   return Model.findByEmail(email)
-    .then(user => {
-      if (!user) {
+    .then(admin => {
+      if (!admin) {
         throw new Error("USER_NOT_FOUND");
       } else {
-        auxiliaryUser = user;
-        return bcrypt.compare(password, user.passwordHash);
+        auxiliaryAdmin = admin;
+        return bcrypt.compare(password, admin.password);
       }
     })
     .then(matches => {
       if (!matches) {
         throw new Error("PASSWORD_DOESNT_MATCH");
       } else {
-        return Promise.resolve(auxiliaryUser);
+        return Promise.resolve(auxiliaryAdmin);
       }
     })
     .catch(error => {
