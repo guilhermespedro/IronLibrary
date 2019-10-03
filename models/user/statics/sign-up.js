@@ -2,8 +2,7 @@
 
 const bcrypt = require("bcryptjs");
 
-// Create a sign in static that is going to abstact the authentication functionality
-module.exports = function({ email, password, name }) {
+module.exports = function({ email, password, name, country, phoneNumber }) {
   const Model = this;
 
   return Model.findByEmail(email)
@@ -17,8 +16,10 @@ module.exports = function({ email, password, name }) {
     .then(hash => {
       return Model.create({
         email,
-        passwordHash: hash,
-        name
+        password: hash,
+        name,
+        country,
+        phoneNumber
       });
     })
     .then(user => {

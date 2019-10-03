@@ -6,7 +6,8 @@
     "start": "node ./server",
     "dev": "nodemon ./server",
     "dev:debug": "DEBUG=react-blogging* npm run dev",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "dev-admin": "nodemon ./bin/www"
   },
   "dependencies": {
     "@ironh/eslint-config": "^0.0.2",
