@@ -15,10 +15,22 @@ const videoSchema = new mongoose.Schema({
   description: {
     type: String
   },
+  duration: {
+    type: String
+  },
   image: {
+    type: String
+  },
+  url: {
     type: String
   }
 });
+
+const findByUrlStatic = require("./statics/find-by-url");
+const createVideoStatic = require("./statics/create");
+
+videoSchema.statics.findByUrl = findByUrlStatic;
+videoSchema.statics.createVideo = createVideoStatic;
 
 const Video = mongoose.model("Video", videoSchema);
 
