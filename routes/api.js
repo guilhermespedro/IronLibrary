@@ -22,7 +22,7 @@ router.post("/edit", routeGuardMiddleware(true), editController);
 router.post(
   "/upload",
   routeGuardMiddleware(true),
-  // uploadImageMiddleware.single("image"), not working. single is not a function!
+  uploadImageMiddleware.single("image"),
   uploadController
 );
 
