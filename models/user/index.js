@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  passwordHash: {
+  password: {
     type: String,
     required: true
   },
