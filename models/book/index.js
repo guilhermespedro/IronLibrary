@@ -4,8 +4,7 @@ const mongoose = require("mongoose");
 
 const bookSchema = new mongoose.Schema({
   title: {
-    type: String,
-    required: true
+    type: String
   },
   thumbnail: {
     type: String
@@ -17,14 +16,27 @@ const bookSchema = new mongoose.Schema({
     type: String
   },
   authors: {
-    type: String
+    type: [String]
   },
   category: {
     type: String,
     required: true,
     enum: ["HTML", "CSS", "JAVASCRIPT", "MONGODB", "NODE", "REACT", "EXPRESS"]
+  },
+  cover: {
+    type: String
+  },
+  isbn: {
+    type: String,
+    required: true
   }
 });
+
+const findByIsbnStatic = require("./statics/find-by-isbn");
+const createBookStatic = require("./statics/create");
+
+bookSchema.statics.findByIsbn = findByIsbnStatic;
+bookSchema.statics.createBook = createBookStatic;
 
 const Book = mongoose.model("Book", bookSchema);
 
