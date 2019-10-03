@@ -3,13 +3,14 @@
 const User = require("../../models/user");
 
 module.exports = (req, res, next) => {
-  const { name, email, phoneNumber } = req.body;
+  const { name, email, phoneNumber, country } = req.body;
   User.findByIdAndUpdate(
     req.user._id,
     {
       ...(name && { name }),
       ...(email && { email }),
-      ...(phoneNumber && { phoneNumber })
+      ...(phoneNumber && { phoneNumber }),
+      ...(country && { country })
     },
     { new: true }
   )

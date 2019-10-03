@@ -1,6 +1,6 @@
 const http = require("http");
 const app = require("../app");
-
+require("dotenv").config;
 app.use((req, res, next) => {
   res.status(404);
   res.render("not-found");
@@ -36,6 +36,6 @@ server.on("error", error => {
   }
 });
 
-server.listen(process.env.PORT, () => {
-  console.log(`Listening on http://localhost:${process.env.PORT}`);
+server.listen(5000, () => {
+  console.log(`Listening on http://localhost:5000`);
 });

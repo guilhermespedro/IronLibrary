@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Admin = require("./../models/admin");
+const Admin = require("../models/admin");
 
 const dbName = process.env.MONGODB_URI;
 mongoose.connect(`${dbName}`);
