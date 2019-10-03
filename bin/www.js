@@ -1,6 +1,6 @@
 const http = require("http");
-const app = require("../app");
-require("dotenv").config;
+const app = require("./../app");
+
 app.use((req, res, next) => {
   res.status(404);
   res.render("not-found");
