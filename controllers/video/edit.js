@@ -17,7 +17,7 @@ module.exports = (req, res, next) => {
   )
     .then(video => {
       if (video) {
-        res.json({ type: "success", data: { video } });
+        res.json({ video });
       } else {
         next(new Error("VIDEO_NOT_EDITED"));
       }

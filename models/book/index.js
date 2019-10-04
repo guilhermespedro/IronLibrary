@@ -4,27 +4,31 @@ const mongoose = require("mongoose");
 
 const bookSchema = new mongoose.Schema({
   title: {
-    type: String
+    type: String,
+    trim: true
   },
   thumbnail: {
-    type: String
+    type: String,
+    trim: true
   },
   year: {
     type: Number
   },
   description: {
-    type: String
+    type: String,
+    trim: true
   },
   authors: {
     type: [String]
   },
   category: {
     type: String,
-    // required: true,
+    required: true,
     enum: ["HTML", "CSS", "JAVASCRIPT", "MONGODB", "NODE", "REACT", "EXPRESS"]
   },
   cover: {
-    type: String
+    type: String,
+    trim: true
   },
   isbn: {
     type: String,

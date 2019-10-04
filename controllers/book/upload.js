@@ -4,13 +4,12 @@ const Book = require("../../models/book");
 
 module.exports = (req, res, next) => {
   const id = req.params.id;
-  const { isbn, price } = req.body;
+  const { url } = req.file;
 
   Book.findByIdAndUpdate(
     { _id: id },
     {
-      ...(isbn && { isbn }),
-      ...(price && { price })
+      ...(url && { cover: url })
     },
     { new: true }
   )
@@ -18,7 +17,7 @@ module.exports = (req, res, next) => {
       if (book) {
         res.json({ book });
       } else {
-        next(new Error("BOOK_NOT_EDITED"));
+        next(new Error("COVER_NOT_UPLOADED"));
       }
     })
     .catch(error => {
