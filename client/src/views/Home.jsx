@@ -21,6 +21,12 @@ export default class HomeView extends Component {
         <Link to="/signup" className="btn btn-primary">  
           Sign Up
         </Link>
+        <Link to="/userProfile" className="btn btn-primary">  
+          User Profile
+        </Link>
+        <Link to="/adminProfile" className="btn btn-primary">  
+          Admin Profile
+        </Link>
       </div>
 
  
