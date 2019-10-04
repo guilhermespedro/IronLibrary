@@ -22,8 +22,6 @@ module.exports = function({ title, description, category, duration, url }) {
     })
     .catch(error => {
       console.log(error);
-      return Promise.reject(
-        new Error("There was an error in the sign up process.")
-      );
+      return Promise.reject(new Error("ERROR_CREATING_VIDEO"));
     });
 };

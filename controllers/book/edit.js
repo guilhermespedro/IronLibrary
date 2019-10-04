@@ -3,24 +3,25 @@
 const Book = require("../../models/book");
 
 module.exports = (req, res, next) => {
-  // const { name, email, phoneNumber } = req.body;
-  // Book.findByIdAndUpdate(
-  //   req.user._id,
-  //   {
-  //     ...(name && { name }),
-  //     ...(email && { email }),
-  //     ...(phoneNumber && { phoneNumber })
-  //   },
-  //   { new: true }
-  // )
-  //   .then(user => {
-  //     if (!user) {
-  //       next(new Error("USER_NOT_FOUND"));
-  //       return;
-  //     }
-  //     res.json({ user });
-  //   })
-  //   .catch(error => {
-  //     next(error);
-  //   });
+  const id = req.params.id;
+  const { cover, isbn, price } = req.body;
+  Book.findByIdAndUpdate(
+    { _id: id },
+    {
+      ...(cover && { cover }),
+      ...(isbn && { isbn }),
+      ...(price && { price })
+    },
+    { new: true }
+  )
+    .then(book => {
+      if (book) {
+        res.json({ type: "success", data: { book } });
+      } else {
+        next(new Error("BOOK_NOT_EDITED"));
+      }
+    })
+    .catch(error => {
+      next(error);
+    });
 };

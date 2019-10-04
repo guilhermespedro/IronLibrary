@@ -3,15 +3,18 @@
 const Book = require("../../models/book");
 
 module.exports = (req, res, next) => {
-  // const { name, email, password, country, phoneNumber } = req.body;
-  // Book.signUp({ name, email, password, country, phoneNumber })
-  //   .then(user => {
-  //     req.session.user = {
-  //       _id: user._id
-  //     };
-  //     res.json({ user });
-  //   })
-  //   .catch(error => {
-  //     next(error);
-  //   });
+  const id = req.params.id;
+  Book.findOneAndDelete({
+    _id: id
+  })
+    .then(book => {
+      if (book) {
+        res.json({ type: "success" });
+      } else {
+        next(new Error("BOOK_NOT_DELETED"));
+      }
+    })
+    .catch(error => {
+      next(error);
+    });
 };

@@ -20,7 +20,7 @@ const bookSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    required: true,
+    // required: true,
     enum: ["HTML", "CSS", "JAVASCRIPT", "MONGODB", "NODE", "REACT", "EXPRESS"]
   },
   cover: {
@@ -28,6 +28,10 @@ const bookSchema = new mongoose.Schema({
   },
   isbn: {
     type: String,
+    required: true
+  },
+  price: {
+    type: Number,
     required: true
   }
 });

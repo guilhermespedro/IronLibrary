@@ -28,6 +28,12 @@ const userSchema = new mongoose.Schema({
   },
   country: {
     type: String
+  },
+  role: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user",
+    required: true
   }
 });
 
