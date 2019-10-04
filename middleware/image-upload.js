@@ -12,8 +12,8 @@ cloudinary.config({
 
 const storage = cloudinaryStorage({
   cloudinary,
-  folder: "",
-  allowedFormats: ["jpeg", "png"]
+  folder: "/ironLibrary",
+  allowedFormats: ["jpg", "png"]
 });
 
 const upload = multer({ storage });
