@@ -13,6 +13,7 @@ import ErrorView from "./views/Error";
 import CatchAllView from "./views/CatchAll";
 import SingleBookView from "./views/SingleBook";
 import SingleVideoView from "./views/SingleVideo";
+import LibraryView from "./views/Library";
 import BookPopUpView from "./component/bookPopUp";
 
 export default class App extends Component {
@@ -26,6 +27,7 @@ export default class App extends Component {
             <Route path="/userprofile" component={UserProfileView} />
             <Route path="/adminprofile" component={AdminProfileView} />
             <Route path="/signup" component={SignUpView} />
+            <Route path="/library" component={LibraryView} />
             <Route path="/singlebook" component={SingleBookView} />
             <Route path="/singlevideo" component={SingleVideoView} />
             <Route path="/bookpopup" component={BookPopUpView} />
