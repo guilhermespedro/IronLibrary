@@ -15,12 +15,14 @@ import SingleBookView from "./views/SingleBook";
 import SingleVideoView from "./views/SingleVideo";
 import LibraryView from "./views/Library";
 import BookPopUpView from "./component/bookPopUp";
+import Nav from "./component/Nav";
 
 export default class App extends Component {
   render() {
     return (
       <div className="App">
         <Router>
+          <Nav />
           <Switch>
             <Route path="/" exact component={HomeView} />
             <Route path="/login" component={LogInView} />
