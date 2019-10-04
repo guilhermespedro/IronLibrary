@@ -14,11 +14,6 @@ const verifyUserController = require("../controllers/user/verify");
 const editUserController = require("./../controllers/user/edit");
 const uploadUserController = require("./../controllers/user/upload");
 
-const signUpAdminController = require("./../controllers/admin/signUp");
-const logInAdminController = require("./../controllers/admin/logIn");
-const logOutAdminController = require("./../controllers/admin/logOut");
-const verifyAdminController = require("../controllers/admin/verify");
-const editAdminController = require("./../controllers/admin/edit");
 
 const createBookControler = require("./../controllers/book/create");
 const editBookControler = require("./../controllers/book/edit");
@@ -33,27 +28,23 @@ router.post(
   "/auth/log-in",
   routeGuardMiddleware(false),
   logInUserController,
-  logInAdminController
+  
 );
 
-router.post(
-  "/auth/admin/sign-up",
-  routeGuardMiddleware(false),
-  signUpAdminController
-);
+
 
 router.post(
   "/auth/log-out",
   routeGuardMiddleware(true),
   logOutUserController,
-  logOutAdminController
+  
 );
-router.get("/auth/verify", verifyUserController, verifyAdminController);
+router.get("/auth/verify", verifyUserController);
 router.patch(
   "/auth/edit",
   routeGuardMiddleware(true),
   editUserController,
-  editAdminController
+  
 );
 
 router.patch(
@@ -63,36 +54,7 @@ router.patch(
   uploadUserController
 );
 
-router.post(
-  "/product/book/create",
-  routeRoleGuardMiddleware(["admin"]),
-  createBookControler
-);
-router.patch(
-  "/product/book/edit",
-  routeRoleGuardMiddleware(["admin"]),
-  editBookControler
-);
-router.post(
-  "/product/book/delete",
-  routeRoleGuardMiddleware(["admin"]),
-  deleteBookControler
-);
 
-router.post(
-  "/product/video/create",
-  routeRoleGuardMiddleware(["admin"]),
-  createVideoControler
-);
-router.patch(
-  "/product/video/edit",
-  routeRoleGuardMiddleware(["admin"]),
-  editVideoControler
-);
-router.post(
-  "/product/video/delete",
-  routeRoleGuardMiddleware(["admin"]),
-  deleteVideoControler
-);
+
 
 module.exports = router;

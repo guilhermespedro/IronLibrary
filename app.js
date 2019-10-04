@@ -12,7 +12,6 @@ const MongoStore = require("connect-mongo")(expressSession);
 const mongoose = require("mongoose");
 
 const deserializeUserMiddleware = require("./middleware/deserialize-user");
-const deserializeAdminMiddleware = require("./middleware/deserialize-admin");
 
 const apiRouter = require("./routes/api");
 
@@ -38,7 +37,7 @@ app.use(
 );
 
 app.use(deserializeUserMiddleware);
-app.use(deserializeAdminMiddleware);
+
 
 app.use("/api", apiRouter);
 
