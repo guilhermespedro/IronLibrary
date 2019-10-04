@@ -1,11 +1,25 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 export default class Library extends Component {
   render() {
     return (
       <div className="d-flex justify-content-center p-5">
+        <Form>
+          {["checkbox", "radio"].map(type => (
+            <div key={`custom-inline-${type}`} className="mb-3">
+              <Form.Check
+                custom
+                // inline
+                label="REACT"
+                type={1}
+                id={`custom-inline-${type}-1`}
+              />
+            </div>
+          ))}
+        </Form>
         <h1> BOOKS </h1>
         <div className="card1">
           <Card style={{ width: "18rem" }}>
