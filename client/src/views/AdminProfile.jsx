@@ -7,7 +7,7 @@ export default class AdminProfileView extends Component {
   render() {
     return (
       <div>
-        <div class="container p-2 pb-5 m-10 pt-3 mt-5 pb-3">
+        <div className="container p-2 pb-5 m-10 pt-3 mt-5 pb-3">
           <h2>
             <strong>Personal Information</strong>
           </h2>
@@ -23,47 +23,47 @@ export default class AdminProfileView extends Component {
           </h4>
         </div>
 
-        <div class="container p-2 m-10">
+        <div className="container p-2 m-10">
           <form action="/admin-profile" method="POST">
-            <div class="form-group">
-              <label for="name">
+            <div className="form-group">
+              <label htmlFor="name">
                 <strong>Name</strong>
               </label>
               <input
                 type="name"
-                class="form-control"
+                className="form-control"
                 id="name"
                 name="name"
                 value="user.name"
               />
             </div>
 
-            <div class="form-group">
-              <label for="email">
+            <div className="form-group">
+              <label htmlFor="email">
                 <strong>Email</strong>
               </label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="email"
                 name="email"
                 value="seller.email"
               />
             </div>
-            <div class="form-group">
-              <label for="password">
+            <div className="form-group">
+              <label htmlFor="password">
                 <strong>Password</strong>
               </label>
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="password"
                 name="password"
                 value="user.password"
               />
             </div>
-            <div class="form-group">
-              <button class="btn btn-outline-primary btn-lg">Edit</button>
+            <div className="form-group">
+              <button className="btn btn-outline-primary btn-lg">Edit</button>
             </div>
           </form>
         </div>

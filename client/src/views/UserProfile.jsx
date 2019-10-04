@@ -7,7 +7,7 @@ export default class UserProfileView extends Component {
   render() {
     return (
       <div>
-        <div class="container p-2 pb-5 m-10 pt-3 mt-5 pb-3">
+        <div className="container p-2 pb-5 m-10 pt-3 mt-5 pb-3">
           <h2>
             <strong>Personal Information</strong>
           </h2>
@@ -29,75 +29,74 @@ export default class UserProfileView extends Component {
           </h4>
         </div>
 
-        <div class="container p-2 m-10">
+        <div className="container p-2 m-10">
           <form action="/user-profile" method="POST">
-            <div class="form-group">
-              <label for="name">
+            <div className="form-group">
+              <label htmlFor="phonenumber">
                 <strong>Name</strong>
               </label>
               <input
                 type="name"
-                class="form-control"
+                className="form-control"
                 id="name"
                 name="name"
                 value="{{user.name}}"
               />
             </div>
 
-            <div class="form-group">
-              <label for="email">
+            <div className="form-group">
+              <label htmlFor="email">
                 <strong>Email</strong>
               </label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="email"
                 name="email"
                 aria-describedby="emailHelp"
                 value="{{user.email}}"
               />
             </div>
-            <div class="form-group">
-              <label for="password">
+            <div className="form-group">
+              <label htmlFor="password">
                 <strong>Password</strong>
               </label>
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 id="password"
                 name="password"
                 aria-describedby="emailHelp"
                 value="{{user.password}}"
               />
             </div>
-            <div class="form-group">
-              <label for="country">
+            <div className="form-group">
+              <label htmlFor="country">
                 <strong>Country</strong>
               </label>
               <input
                 type="country"
-                class="form-control"
+                className="form-control"
                 id="country"
                 name="country"
                 aria-describedby="emailHelp"
                 value="{{seller.country}}"
               />
             </div>
-            <div class="form-group">
-              <label for="phonenumber">
+            <div className="form-group">
+              <label htmlFor="phonenumber">
                 <strong>Phone Number</strong>
               </label>
               <input
                 type="phonenumber"
-                class="form-control"
+                className="form-control"
                 id="phonenumber"
                 name="phonenumber"
                 aria-describedby="emailHelp"
                 value="{{seller.phonenumber}}"
               />
             </div>
-            <button class="btn btn-outline-primary btn-lg">Edit</button>
-            {/* <a href="/seller-profile/delete" class="btn btn-outline-danger btn-lg">Delete account</a> */}
+            <button className="btn btn-outline-primary btn-lg">Edit</button>
           </form>
         </div>
       </div>
