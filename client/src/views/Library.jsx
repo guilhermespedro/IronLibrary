@@ -2,20 +2,21 @@ import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Col from "react-bootstrap/Col";
 
 export default class Library extends Component {
   render() {
     return (
       <div className="d-flex justify-content-center p-5">
         <Form>
-          {["checkbox", "radio"].map(type => (
-            <div key={`custom-inline-${type}`} className="mb-3">
+          {["checkbox", "radio"].map(checkbox => (
+            <div key={`custom-inline-${checkbox}`} className="mb-3">
               <Form.Check
                 custom
-                // inline
+                inline
                 label="REACT"
-                type={1}
-                id={`custom-inline-${type}-1`}
+                type={checkbox}
+                id={`custom-inline-${checkbox}-1`}
               />
             </div>
           ))}
@@ -69,6 +70,11 @@ export default class Library extends Component {
             </Card.Body>
           </Card>
         </div>
+        <Col>
+          <div>
+            <h1> VIDEOS</h1>
+          </div>
+        </Col>
       </div>
     );
   }
