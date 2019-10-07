@@ -47,7 +47,7 @@ export default class SignUpView extends Component {
 
   render() {
     return (
-      <div>
+      <div className="title">
         <div className="d-flex justify-content-center p-5">
           <Form
             className=" w-25 p-3 block-example border border-dark"
