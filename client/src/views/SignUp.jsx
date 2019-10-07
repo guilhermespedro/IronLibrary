@@ -38,7 +38,7 @@ export default class SignUpView extends Component {
       phoneNumber
     })
       .then(user => {
-        this.props.history.push("/profile");
+        this.props.history.push("/profile/");
       })
       .catch(error => {
         console.log(error);
