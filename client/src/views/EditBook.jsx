@@ -2,15 +2,18 @@ import React, { Component } from 'react'
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-export default class CreateVideoView extends Component {
+export default class EditBookView extends Component {
     render() {
         return (
             <div>
-                <div className="d-flex p-5">
+        
+        <div className="d-flex p-5">
 
-            <h3>Add a new Video</h3>
-            <br/>
-                </div>
+<h3>Update Book Details</h3>
+<br/>
+    </div>
+
+
           <div className="d-flex p-1">
             <Form className=" w-25 p-3">
               <Form.Group>
@@ -22,23 +25,27 @@ export default class CreateVideoView extends Component {
                 />
               </Form.Group>
               <Form.Group size="sm">
-                <Form.Label>Description</Form.Label>
+                <Form.Label>Price</Form.Label>
                 <Form.Control
                   
-                  name="description"
+                  name="price"
                   
                 ></Form.Control>
               </Form.Group>
               <Form.Group size="sm">
-                <Form.Label>Duration</Form.Label>
+                <Form.Label>ISBN</Form.Label>
                 <Form.Control
-                  name="duration"
+                  name="isbn"
                 />
               </Form.Group>
-              
-              
               <Form.Group size="sm">
-                <Form.Label>URL</Form.Label>
+                <Form.Label>Year</Form.Label>
+                <Form.Control
+                  name="year"
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group size="sm">
+                <Form.Label>Cover</Form.Label>
                 <Form.Control
                   name="file"
                   type="uploadfile"
@@ -46,7 +53,7 @@ export default class CreateVideoView extends Component {
               </Form.Group>
               
           
-              <Button type="submit">Upload Video</Button>
+              <Button type="submit">Update</Button>
             </Form>
           </div>
         </div>

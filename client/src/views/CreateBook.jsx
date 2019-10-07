@@ -46,7 +46,7 @@ export default class CreateProductView extends Component {
                 ></Form.Control>
               </Form.Group>
               <Form.Group size="sm">
-                <Form.Label>Image</Form.Label>
+                <Form.Label>Cover</Form.Label>
                 <Form.Control
                   name="file"
                   type="uploadfile"

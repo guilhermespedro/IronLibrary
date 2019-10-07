@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-export default class CreateVideoView extends Component {
+export default class EditVideoView extends Component {
     render() {
         return (
             <div>
                 <div className="d-flex p-5">
 
-            <h3>Add a new Video</h3>
+            <h3>Update Video Details</h3>
             <br/>
                 </div>
           <div className="d-flex p-1">
@@ -46,7 +46,7 @@ export default class CreateVideoView extends Component {
               </Form.Group>
               
           
-              <Button type="submit">Upload Video</Button>
+              <Button type="submit">Update</Button>
             </Form>
           </div>
         </div>
