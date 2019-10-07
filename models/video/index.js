@@ -5,7 +5,8 @@ const mongoose = require("mongoose");
 const videoSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    trim: true
   },
   category: {
     type: String,
@@ -13,13 +14,16 @@ const videoSchema = new mongoose.Schema({
     enum: ["HTML", "CSS", "JAVASCRIPT", "MONGODB", "NODE", "REACT", "EXPRESS"]
   },
   description: {
-    type: String
+    type: String,
+    trim: true
   },
   duration: {
-    type: String
+    type: String,
+    trim: true
   },
   url: {
-    type: String
+    type: String,
+    trim: true
   }
 });
 

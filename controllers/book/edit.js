@@ -4,11 +4,11 @@ const Book = require("../../models/book");
 
 module.exports = (req, res, next) => {
   const id = req.params.id;
-  const { cover, isbn, price } = req.body;
+  const { isbn, price } = req.body;
+
   Book.findByIdAndUpdate(
     { _id: id },
     {
-      ...(cover && { cover }),
       ...(isbn && { isbn }),
       ...(price && { price })
     },
@@ -16,7 +16,7 @@ module.exports = (req, res, next) => {
   )
     .then(book => {
       if (book) {
-        res.json({ type: "success", data: { book } });
+        res.json({ book });
       } else {
         next(new Error("BOOK_NOT_EDITED"));
       }
