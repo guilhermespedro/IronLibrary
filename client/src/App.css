@@ -20,3 +20,21 @@
 .App-link {
   color: #09d3ac;
 } */
+body {
+  margin: 0;
+  padding: 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: url("/images/space-bg1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.bg-custom-1 {
+  background-color: #85144b;
+}
+
+.bg-custom-2 {
+  background-image: linear-gradient(15deg, #24044e 0%, #0b1cb1 100%);
+}
