@@ -15,6 +15,8 @@ import SingleBookView from "./views/SingleBook";
 import SingleVideoView from "./views/SingleVideo";
 import LibraryView from "./views/Library";
 import BookPopUpView from "./component/bookPopUp";
+import CreateBookView from "./views/CreateBook";
+import CreateVideoView from "./views/CreateVideo";
 import Nav from "./component/Nav";
 
 export default class App extends Component {
@@ -28,6 +30,8 @@ export default class App extends Component {
             <Route path="/login" component={LogInView} />
             <Route path="/userprofile" component={UserProfileView} />
             <Route path="/adminprofile" component={AdminProfileView} />
+            <Route path="/createbook" component={CreateBookView} />
+            <Route path="/createvideo" component={CreateVideoView} />
             <Route path="/signup" component={SignUpView} />
             <Route path="/library" component={LibraryView} />
             <Route path="/singlebook" component={SingleBookView} />
