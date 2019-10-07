@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const postApi = axios.create({
+const bookApi = axios.create({
   baseURL: "/api/product/book"
 });
 
 export const list = () => {
   return new Promise((resolve, reject) => {
-    postApi
+    bookApi
       .get("/")
       .then(response => {
         resolve(response.data.books);
@@ -19,7 +19,7 @@ export const list = () => {
 
 export const load = id => {
   return new Promise((resolve, reject) => {
-    postApi
+    bookApi
       .get(`/${id}`)
       .then(response => {
         resolve(response.data.book);
@@ -32,7 +32,7 @@ export const load = id => {
 
 export const create = bookData => {
   return new Promise((resolve, reject) => {
-    postApi
+    bookApi
       .post("/create", bookData)
       .then(response => {
         resolve(response.data.book);
@@ -45,7 +45,7 @@ export const create = bookData => {
 
 export const edit = (id, updatedBook) => {
   return new Promise((resolve, reject) => {
-    postApi
+    bookApi
       .patch(`/edit/${id}`, updatedBook)
       .then(response => {
         resolve(response.data.book);
@@ -58,7 +58,7 @@ export const edit = (id, updatedBook) => {
 
 export const upload = (id, uploadCoverBook) => {
   return new Promise((resolve, reject) => {
-    postApi
+    bookApi
       .patch(`/upload/${id}`, uploadCoverBook)
       .then(response => {
         resolve(response.data.book);
@@ -71,7 +71,7 @@ export const upload = (id, uploadCoverBook) => {
 
 export const remove = id => {
   return new Promise((resolve, reject) => {
-    postApi
+    bookApi
       .delete(`/delete/${id}`)
       .then(() => {
         resolve();

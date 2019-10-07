@@ -30,6 +30,19 @@ export const logIn = ({ email, password }) => {
   });
 };
 
+export const edit = (id, updatedUser) => {
+  return new Promise((resolve, reject) => {
+    authenticationApi
+      .patch(`/edit/${id}`, (id, updatedUser))
+      .then(response => {
+        resolve(response.data.user);
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
+};
+
 export const logOut = () => {
   return new Promise((resolve, reject) => {
     authenticationApi
