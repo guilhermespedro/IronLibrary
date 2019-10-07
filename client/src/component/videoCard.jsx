@@ -7,7 +7,10 @@ export default class videoCard extends Component {
     return (
       <div>
         <Card style={{ width: "14rem" }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+          <Card.Img
+            variant="top"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7MpnWuJ79-pdYdud1iTnftFXiVPT4yvWnCEwe7P9yWlG7vk6V"
+          />
           <Card.Body>
             <Card.Title>Video Title</Card.Title>
             <Card.Text>Video Description</Card.Text>
