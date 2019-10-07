@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-
-import { edit as editService } from "./../services/authentication-api";
+import {
+  edit as editService,
+  verify as verifyService
+} from "./../services/authentication-api";
 
 export default class UserProfileView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null
+      user: ""
     };
     this.onValueChange = this.onValueChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -41,34 +41,44 @@ export default class UserProfileView extends Component {
       });
   }
 
+  componentDidMount() {
+    verifyService()
+      .then(user => {
+        this.setState({
+          ...(user && { user }),
+          loaded: true
+        });
+      })
+      .catch(error => {
+        this.setState({
+          loaded: true
+        });
+        console.log(error);
+      });
+  }
+
   render() {
-    console.log(this.state);
+    const user = this.state.user;
 
     return (
       <div>
-        {JSON.stringify(this.state.user)}
         <div className="container p-2 pb-5 m-10 pt-3 mt-5 pb-3">
           <h2>
             <strong>Personal Information</strong>
           </h2>
           <br></br>
-          {this.props.user && (
-            <div>
-              <h4>
-                <strong>Name:</strong> {this.props.user.name}
-              </h4>
-              <h4>{/* <strong>Email:</strong> {this.props.user.email} */}</h4>
-              <h4>
-                {/* <strong>Password:</strong> {this.props.user.password} */}
-              </h4>
-              <h4>
-                {/* <strong>Country:</strong> {this.props.user.country} */}
-              </h4>
-              <h4>
-                {/* <strong>Phone Number:</strong> {this.props.user.phonenumber} */}
-              </h4>
-            </div>
-          )}
+          <h4>
+            <strong>Name:</strong> {user.name}
+          </h4>
+          <h4>
+            <strong>Email:</strong> {user.email}
+          </h4>
+          <h4>
+            <strong>Country:</strong> {user.country}
+          </h4>
+          <h4>
+            <strong>Phone Number:</strong> {user.phoneNumber}
+          </h4>
         </div>
         <div className="container p-2 m-10">
           <form action="/user-profile" method="POST">
@@ -81,7 +91,7 @@ export default class UserProfileView extends Component {
                 className="form-control"
                 id="name"
                 name="name"
-                value={this.props.user ? this.props.user.name : ""}
+                value={user.name}
               />
             </div>
 
@@ -95,20 +105,7 @@ export default class UserProfileView extends Component {
                 id="email"
                 name="email"
                 aria-describedby="emailHelp"
-                value="{{user.email}}"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">
-                <strong>Password</strong>
-              </label>
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                name="password"
-                aria-describedby="emailHelp"
-                value="{{user.password}}"
+                value={user.email}
               />
             </div>
             <div className="form-group">
@@ -121,7 +118,7 @@ export default class UserProfileView extends Component {
                 id="country"
                 name="country"
                 aria-describedby="emailHelp"
-                value="{{user.country}}"
+                value={user.country}
               />
             </div>
             <div className="form-group">
@@ -132,9 +129,9 @@ export default class UserProfileView extends Component {
                 type="phonenumber"
                 className="form-control"
                 id="phonenumber"
-                name="phonenumber"
+                name="phoneNumber"
                 aria-describedby="emailHelp"
-                value="{{user.phonenumber}}"
+                value={user.phoneNumber}
               />
             </div>
             <button className="btn btn-outline-primary btn-lg">Edit</button>

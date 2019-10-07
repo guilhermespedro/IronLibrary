@@ -32,22 +32,6 @@ export default class App extends Component {
     this.loadUser = this.loadUser.bind(this);
   }
 
-  componentDidMount() {
-    verifyService()
-      .then(user => {
-        this.setState({
-          ...(user && { user }),
-          loaded: true
-        });
-      })
-      .catch(error => {
-        this.setState({
-          loaded: true
-        });
-        console.log(error);
-      });
-  }
-
   loadUser(user) {
     this.setState({
       user
@@ -70,12 +54,7 @@ export default class App extends Component {
             <Route
               path="/profile/"
               render={props => (
-                <ProfileView
-                  {...props}
-                  exact
-                  loadUser={this.loadUser}
-                  user={this.state.user}
-                />
+                <ProfileView {...props} exact loadUser={this.loadUser} />
               )}
             />
             <Route path="/createbook" component={CreateBookView} />

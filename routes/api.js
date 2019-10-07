@@ -35,7 +35,7 @@ router.post("/auth/log-in", routeGuardMiddleware(false), logInController);
 
 router.post("/auth/log-out", routeGuardMiddleware(true), logOutController);
 
-router.get("/auth/verify", verifyController);
+router.get("/auth/verify/", verifyController);
 
 router.patch("/auth/edit/:id", routeGuardMiddleware(true), editController);
 
