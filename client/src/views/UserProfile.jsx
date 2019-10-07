@@ -3,7 +3,52 @@ import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
+import { edit as editService } from "./../services/authentication-api";
+
 export default class UserProfileView extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      email: "",
+      password: "",
+      country:"",
+      phonenumber:""
+    };
+    this.onValueChange = this.onValueChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
+  }
+
+  onValueChange(event) {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({
+      [name]: value
+    });
+  }
+
+  onFormSubmit(event) {
+    event.preventDefault();
+    const { name, email, password, country, phonenumber,  } = this.state;
+    editService({
+      name,
+      email,
+      password, 
+      country:"",
+      phonenumber:""
+    })
+      .then(user => {
+        this.props.history.push("/");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+
+
+
+
   render() {
     return (
       <div>
@@ -13,19 +58,19 @@ export default class UserProfileView extends Component {
           </h2>
           <br></br>
           <h4>
-            <strong>Name:</strong> user.name{" "}
+            <strong>Name:</strong> {this.props.user.name}
           </h4>
           <h4>
-            <strong>Email:</strong> user.email{" "}
+            <strong>Email:</strong> {this.props.user.email}
           </h4>
           <h4>
-            <strong>Password:</strong> user.password{" "}
+            <strong>Password:</strong> {this.props.user.password}
           </h4>
           <h4>
-            <strong>Country:</strong> user.country{" "}
+            <strong>Country:</strong> {this.props.user.country}
           </h4>
           <h4>
-            <strong>Phone Number:</strong> user.phonenumber{" "}
+            <strong>Phone Number:</strong> {this.props.user.phonenumber}
           </h4>
         </div>
 
@@ -80,7 +125,7 @@ export default class UserProfileView extends Component {
                 id="country"
                 name="country"
                 aria-describedby="emailHelp"
-                value="{{seller.country}}"
+                value="{{user.country}}"
               />
             </div>
             <div className="form-group">
@@ -93,7 +138,7 @@ export default class UserProfileView extends Component {
                 id="phonenumber"
                 name="phonenumber"
                 aria-describedby="emailHelp"
-                value="{{seller.phonenumber}}"
+                value="{{user.phonenumber}}"
               />
             </div>
             <button className="btn btn-outline-primary btn-lg">Edit</button>

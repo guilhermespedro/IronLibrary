@@ -30,8 +30,7 @@ export default class App extends Component {
           <Switch>
             <Route path="/" exact component={HomeView} />
             <Route path="/login" component={LogInView} />
-            <Route path="/userprofile" component={UserProfileView} />
-            <Route path="/adminprofile" component={AdminProfileView} />
+            <Route path="/profile" component={UserProfileView} />
             <Route path="/createbook" component={CreateBookView} />
             <Route path="/createvideo" component={CreateVideoView} />
             <Route path="/editbook" component={EditBookView} />
