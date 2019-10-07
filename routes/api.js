@@ -18,10 +18,14 @@ const createBookControler = require("./../controllers/book/create");
 const editBookControler = require("./../controllers/book/edit");
 const deleteBookControler = require("./../controllers/book/delete");
 const uploadBookCoverController = require("./../controllers/book/upload");
+const loadBookController = require("./../controllers/book/load");
+const listBooksController = require("./../controllers/book/list");
 
 const createVideoControler = require("./../controllers/video/create");
 const editVideoControler = require("./../controllers/video/edit");
 const deleteVideoControler = require("./../controllers/video/delete");
+const loadVideoController = require("./../controllers/video/load");
+const listVideosController = require("./../controllers/video/list");
 
 // --------------Authentication Routes--------------
 
@@ -44,11 +48,15 @@ router.patch(
 
 // --------------Book Routes--------------
 
+router.get("/product/book", listBooksController);
+
 router.post(
   "/product/book/create",
   routeRoleGuardMiddleware(["admin"]),
   createBookControler
 );
+
+router.get("/product/book/:id", loadBookController);
 
 router.patch(
   "/product/book/edit/:id",
@@ -71,11 +79,15 @@ router.delete(
 
 // --------------Videos Routes--------------
 
+router.get("/product/video", listVideosController);
+
 router.post(
   "/product/video/create",
   routeRoleGuardMiddleware(["admin"]),
   createVideoControler
 );
+
+router.get("/product/video/:id", loadVideoController);
 
 router.patch(
   "/product/video/edit/:id",
