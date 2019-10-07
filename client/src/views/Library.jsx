@@ -33,8 +33,8 @@ export default class Library extends Component {
     return (
       <div className="d-flex flex-row">
         <Col className="col-4">
-          <ul>
-            <h5> Filter by Category </h5>{" "}
+          <ul class="title">
+            <h5 class="title"> Filter by Category </h5>{" "}
             <ul>
               <input type="radio" name="gender" value="react" /> React
             </ul>
@@ -58,12 +58,12 @@ export default class Library extends Component {
             </ul>
           </ul>
           <ul>
-            <h5> Filter by Price </h5>
-            <ul>
+            <h5 class="title"> Filter by Price </h5>
+            <ul class="title">
               <input type="radio" name="gender" value="mongodb" />
               Filter by Price
             </ul>
-            <ul>
+            <ul class="title">
               <input type="radio" name="gender" value="mongodb" /> Filter by
               Programming language
             </ul>
@@ -71,7 +71,7 @@ export default class Library extends Component {
         </Col>
         <Col className="col-8">
           <Row>
-            <h2> Books </h2>
+            <h2 class="title"> Books </h2>
           </Row>
           <Row>
             <BookCard book={this.state.book} />
@@ -79,7 +79,7 @@ export default class Library extends Component {
             <BookCard book={this.state.book} />
           </Row>
           <Row>
-            <h2> Videos </h2>
+            <h2 class="title"> Videos </h2>
           </Row>
           <Row>
             <VideoCard video={this.state.video} />

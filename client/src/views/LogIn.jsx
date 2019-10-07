@@ -32,7 +32,8 @@ export default class LogInView extends Component {
       password
     })
       .then(user => {
-        this.props.history.push("/profile");
+        this.props.loadUser(user);
+        this.props.history.push("/profile/");
       })
       .catch(error => {
         console.log(error);
@@ -41,7 +42,7 @@ export default class LogInView extends Component {
 
   render() {
     return (
-      <div>
+      <div className="title">
         <div className="d-flex justify-content-center p-5">
           <Form
             className="w-25 p-3 block-example border border-dark "

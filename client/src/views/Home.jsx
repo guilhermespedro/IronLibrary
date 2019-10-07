@@ -52,34 +52,69 @@ export default class HomeView extends Component {
               Admin Profile
             </Link>
           </div>
-          <div>
-            {/* <Image src="/images/space-bg.jpg" fluid /> */}
-            {/* <img
-              className="d-block w-100"
-              src="/images/space-bg1.jpg"
-              alt="First slide" */}
-            />
-          </div>
-          <div className="d-flex flex-row">
-            <Col className="col-4"></Col>
-            <Col className="col-8">
-              <Row>
-                <h2> Books </h2>
-              </Row>
-              <Row>
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-              </Row>
-              <Row>
-                <h2> Videos </h2>
-              </Row>
-              <Row>
-                <VideoCard video={this.state.video} />
-                <VideoCard video={this.state.video} />
-                <VideoCard video={this.state.video} />
-              </Row>
-            </Col>
+          <div></div>
+          <div className="homepage">
+            <div className="d-flex flex-row justify-content-center">
+              <Col className="col-4"></Col>
+              <Col className="col-8">
+                <Row>
+                  <h2 className="title"> React </h2>
+                </Row>
+                <Row>
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                </Row>
+                <Row>
+                  <h2 className="title"> Express </h2>
+                </Row>
+                <Row>
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                </Row>
+                <Row>
+                  <h2 className="title"> JavaScript </h2>
+                </Row>
+                <Row>
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                </Row>
+                <Row>
+                  <h2 className="title"> NodeJS </h2>
+                </Row>
+                <Row>
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                </Row>
+                <Row>
+                  <h2 className="title"> HTML5 </h2>
+                </Row>
+                <Row>
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                </Row>
+                <Row>
+                  <h2 className="title"> CSS3 </h2>
+                </Row>
+                <Row>
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                </Row>
+                <Row>
+                  <h2 className="title"> MongoDB </h2>
+                </Row>
+                <Row>
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                  <BookCard book={this.state.book} />
+                </Row>
+              </Col>
+            </div>
           </div>
         </div>
       </body>

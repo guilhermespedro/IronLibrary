@@ -9,11 +9,7 @@ export default class UserProfileView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      email: "",
-      password: "",
-      country:"",
-      phonenumber:""
+      user: null
     };
     this.onValueChange = this.onValueChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -29,51 +25,51 @@ export default class UserProfileView extends Component {
 
   onFormSubmit(event) {
     event.preventDefault();
-    const { name, email, password, country, phonenumber,  } = this.state;
+    const { name, email, password, country, phonenumber } = this.state;
     editService({
       name,
       email,
-      password, 
-      country:"",
-      phonenumber:""
+      country,
+      phonenumber
     })
       .then(user => {
-        this.props.history.push("/");
+        this.props.loadUser(user);
+        // this.props.history.push("/");
       })
       .catch(error => {
         console.log(error);
       });
   }
 
-
-
-
-
   render() {
+    console.log(this.state);
+
     return (
       <div>
+        {JSON.stringify(this.state.user)}
         <div className="container p-2 pb-5 m-10 pt-3 mt-5 pb-3">
           <h2>
             <strong>Personal Information</strong>
           </h2>
           <br></br>
-          <h4>
-            <strong>Name:</strong> {this.props.user.name}
-          </h4>
-          <h4>
-            <strong>Email:</strong> {this.props.user.email}
-          </h4>
-          <h4>
-            <strong>Password:</strong> {this.props.user.password}
-          </h4>
-          <h4>
-            <strong>Country:</strong> {this.props.user.country}
-          </h4>
-          <h4>
-            <strong>Phone Number:</strong> {this.props.user.phonenumber}
-          </h4>
+          {this.props.user && (
+            <div>
+              <h4>
+                <strong>Name:</strong> {this.props.user.name}
+              </h4>
+              <h4>{/* <strong>Email:</strong> {this.props.user.email} */}</h4>
+              <h4>
+                {/* <strong>Password:</strong> {this.props.user.password} */}
+              </h4>
+              <h4>
+                {/* <strong>Country:</strong> {this.props.user.country} */}
+              </h4>
+              <h4>
+                {/* <strong>Phone Number:</strong> {this.props.user.phonenumber} */}
+              </h4>
+            </div>
+          )}
         </div>
-
         <div className="container p-2 m-10">
           <form action="/user-profile" method="POST">
             <div className="form-group">
@@ -85,7 +81,7 @@ export default class UserProfileView extends Component {
                 className="form-control"
                 id="name"
                 name="name"
-                value="{{user.name}}"
+                value={this.props.user ? this.props.user.name : ""}
               />
             </div>
 
