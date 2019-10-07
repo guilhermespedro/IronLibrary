@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import BookCard from "../component/bookCard";
+import VideoCard from "../component/videoCard";
 import { list as listService } from "../services/book-api";
 
 export default class Library extends Component {
@@ -33,7 +34,7 @@ export default class Library extends Component {
       <div className="d-flex flex-row">
         <Col className="col-4">
           <ul>
-            <h4> Filter by Category </h4>{" "}
+            <h5> Filter by Category </h5>{" "}
             <ul>
               <input type="radio" name="gender" value="react" /> React
             </ul>
@@ -57,7 +58,7 @@ export default class Library extends Component {
             </ul>
           </ul>
           <ul>
-            <h4> Filter by Price </h4>
+            <h5> Filter by Price </h5>
             <ul>
               <input type="radio" name="gender" value="mongodb" />
               Filter by Price
@@ -70,12 +71,20 @@ export default class Library extends Component {
         </Col>
         <Col className="col-8">
           <Row>
-            <h1> Book Description </h1>
+            <h2> Books </h2>
           </Row>
           <Row>
             <BookCard book={this.state.book} />
             <BookCard book={this.state.book} />
             <BookCard book={this.state.book} />
+          </Row>
+          <Row>
+            <h2> Videos </h2>
+          </Row>
+          <Row>
+            <VideoCard video={this.state.video} />
+            <VideoCard video={this.state.video} />
+            <VideoCard video={this.state.video} />
           </Row>
         </Col>
       </div>

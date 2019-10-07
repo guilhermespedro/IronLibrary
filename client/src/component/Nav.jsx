@@ -5,10 +5,11 @@ export default class Nav extends Component {
     return (
       <div>
         <div className="navi">
-          <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-0">
-            <a className="navbar-brand" href="#">
+          <nav className="navbar navbar-expand-lg navbar-dark bg-custom-2 mt-0">
+            <a class="navbar-brand" href="#a">
               Iron Library
             </a>
+
             <button
               className="navbar-toggler"
               type="button"
