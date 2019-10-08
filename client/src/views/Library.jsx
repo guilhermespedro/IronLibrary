@@ -34,7 +34,7 @@ export default class Library extends Component {
       <div className="d-flex flex-row">
         <Col className="col-4">
           <ul className="title">
-            <h5 className="title"> Filter by Category </h5>{" "}
+            <h5 className="title"> Filter by Content Category </h5>{" "}
             <ul>
               <input type="radio" name="gender" value="react" /> React
             </ul>
@@ -57,20 +57,20 @@ export default class Library extends Component {
           <ul>
             <h5 class="title"> Filter by Price </h5>
             <ul class="title">
-              <input type="radio" name="gender" value="mongodb" />
+              <input type="radio" />
               0€ - 10€
             </ul>
             <ul class="title">
-              <input type="radio" name="gender" value="mongodb" /> 10€ - 20€
+              <input type="radio" /> 10€ - 20€
             </ul>
             <ul class="title">
-              <input type="radio" name="gender" value="mongodb" /> 20€ - 30€
+              <input type="radio" /> 20€ - 30€
             </ul>
             <ul class="title">
-              <input type="radio" name="gender" value="mongodb" /> 30€ - 40€
+              <input type="radio" /> 30€ - 40€
             </ul>
             <ul class="title">
-              <input type="radio" name="gender" value="mongodb" /> +40€
+              <input type="radio" /> +40€
             </ul>
           </ul>
         </Col>
