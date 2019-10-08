@@ -43,7 +43,10 @@ export default class LogInView extends Component {
   render() {
     return (
       <div className="title">
-        <div className="d-flex justify-content-center p-5">
+        <div className="d-flex justify-content-center p-4">
+      <h3>Please Login</h3>
+        </div>
+        <div className="d-flex justify-content-center p-3">
           <Form
             className="w-25 p-3 block-example border border-dark "
             onSubmit={this.onFormSubmit}
