@@ -37,7 +37,7 @@ export default class HomeView extends Component {
     return (
       <body background="/images/space-bg1.jpg">
         <div>
-          <div>
+          {/* <div>
             <Link to="/login" className="btn btn-danger">
               Log In
             </Link>
@@ -51,7 +51,7 @@ export default class HomeView extends Component {
             <Link to="/adminProfile" className="btn btn-primary">
               Admin Profile
             </Link>
-          </div>
+          </div> */}
           <div></div>
           <div className="homepage">
             <div className="d-flex flex-row justify-content-center">
@@ -90,15 +90,7 @@ export default class HomeView extends Component {
                   <BookCard book={this.state.book} />
                 </Row>
                 <Row>
-                  <h2 className="title"> HTML5 </h2>
-                </Row>
-                <Row>
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                </Row>
-                <Row>
-                  <h2 className="title"> CSS3 </h2>
+                  <h2 className="title"> HTML5/CSS3 </h2>
                 </Row>
                 <Row>
                   <BookCard book={this.state.book} />

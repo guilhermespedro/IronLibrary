@@ -29,6 +29,7 @@ export default class App extends Component {
       user: null,
       loaded: false
     };
+    this.signOut = this.signOut.bind(this);
     this.loadUser = this.loadUser.bind(this);
   }
 
