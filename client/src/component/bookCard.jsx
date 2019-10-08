@@ -14,7 +14,7 @@ export default class bookCard extends Component {
       //     </Card.Body>
       //   </Card>
       // </div>
-      <div className="card card-cascade narrower w-25 p-1">
+      <div className="card card-cascade narrower w-25 p-1 justify-content center">
         <div className="view view-cascade overlay">
           <img
             className="card-img-top"

@@ -30,8 +30,10 @@ export default class HomeView extends Component {
     if (!this.state.book) return <div>Loading...</div>;
     return (
       <body>
-        <div>
-          {/* <div>
+        <div className="primeiraimg">
+
+        </div>
+        {/* <div>
             <Link to="/login" className="btn btn-danger">
               Log In
             </Link>
@@ -46,61 +48,59 @@ export default class HomeView extends Component {
               Admin Profile
             </Link>
           </div> */}
-          <div></div>
-          <div className="homepage">
-            <div className="d-flex flex-row justify-content-center">
-              <Col className="col-4 "></Col>
-              <Col className="col-8">
-                <Row>
-                  <h2 className="title"> React </h2>
-                </Row>
-                <Row>
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                </Row>
-                <Row>
-                  <h2 className="title"> Express </h2>
-                </Row>
-                <Row>
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                </Row>
-                <Row>
-                  <h2 className="title"> JavaScript </h2>
-                </Row>
-                <Row>
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                </Row>
-                <Row>
-                  <h2 className="title"> NodeJS </h2>
-                </Row>
-                <Row>
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                </Row>
-                <Row>
-                  <h2 className="title"> HTML5/CSS3 </h2>
-                </Row>
-                <Row>
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                </Row>
-                <Row>
-                  <h2 className="title"> MongoDB </h2>
-                </Row>
-                <Row>
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                  <BookCard book={this.state.book} />
-                </Row>
-              </Col>
-            </div>
+        <div className="homepage">
+          <div className="d-flex flex-row justify-content-center">
+            <Col className="col-4 "></Col>
+            <Col className="col-8">
+              <Row>
+                <h2 className="title"> React </h2>
+              </Row>
+              <Row>
+                <BookCard book={this.state.book} />
+                <BookCard book={this.state.book} />
+                <BookCard book={this.state.book} />
+              </Row>
+              <Row>
+                <h2 className="title"> Express </h2>
+              </Row>
+              <Row>
+                <BookCard book={this.state.book} />
+                <BookCard book={this.state.book} />
+                <BookCard book={this.state.book} />
+              </Row>
+              <Row>
+                <h2 className="title"> JavaScript </h2>
+              </Row>
+              <Row>
+                <BookCard book={this.state.book} />
+                <BookCard book={this.state.book} />
+                <BookCard book={this.state.book} />
+              </Row>
+              <Row>
+                <h2 className="title"> NodeJS </h2>
+              </Row>
+              <Row>
+                <BookCard book={this.state.book} />
+                <BookCard book={this.state.book} />
+                <BookCard book={this.state.book} />
+              </Row>
+              <Row>
+                <h2 className="title"> HTML5/CSS3 </h2>
+              </Row>
+              <Row>
+                <BookCard book={this.state.book} />
+                <BookCard book={this.state.book} />
+                <BookCard book={this.state.book} />
+              </Row>
+              <Row>
+                <h2 className="title"> MongoDB </h2>
+              </Row>
+              <Row>
+                <BookCard book={this.state.book} />
+                <BookCard book={this.state.book} />
+                <BookCard book={this.state.book} />
+              </Row>
+            </Col>
           </div>
         </div>
       </body>

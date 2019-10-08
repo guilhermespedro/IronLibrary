@@ -20,6 +20,7 @@
 .App-link {
   color: #09d3ac;
 } */
+
 body {
   margin: 0;
   padding: 50px;
@@ -33,22 +34,58 @@ body {
   -o-background-size: cover;
 }
 
+.primeiraimg {
+  margin: 0;
+  padding: 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  z-index: 2;
+  background: url("/images/ironlibrary1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.homepage {
+  margin: 0;
+  padding: 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  z-index: 2;
+  background: url("/images/space-bg1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
 .bg-custom-1 {
   background-color: #85144b;
 }
 
 .bg-custom-2 {
-  background-image: linear-gradient(15deg, #0c0fc980 0%, #5f0641a8 100%);
+  background-image: linear-gradient(15deg, #0c0fc9ad 0%, #bd1044b9 100%);
 }
 
 .title {
   color: white;
 }
 
-.body {
-  opacity: 0.2;
-}
+/* body {
+  opacity: 0.7;
+} */
 
 card-img-top {
   opacity: 1;
+}
+
+.navi {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  z-index: 2;
+  /* -webkit-background-size: cover; */
+  /* -moz-background-size: cover; */
+  /* background-size: cover; */
+  /* -o-background-size: cover; */
+  opacity: 0.7;
 }
