@@ -41,6 +41,7 @@ export default class App extends Component {
     this.loadUser = this.loadUser.bind(this);
     this.verifyAuthenticated = this.verifyAuthenticated.bind(this);
     this.verifyUnauthenticated = this.verifyUnauthenticated.bind(this);
+    this.logOut = this.logOut.bind(this);
   }
 
   componentDidMount() {

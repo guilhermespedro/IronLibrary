@@ -63,20 +63,20 @@ export default class UserProfileView extends Component {
     return (
       <div>
         <div className="container p-2 pb-5 m-10 pt-3 mt-5 pb-3">
-          <h2>
+          <h2 className="title">
             <strong>Personal Information</strong>
           </h2>
           <br></br>
-          <h4>
+          <h4 className="title">
             <strong>Name:</strong> {user.name}
           </h4>
-          <h4>
+          <h4 className="title">
             <strong>Email:</strong> {user.email}
           </h4>
-          <h4>
+          <h4 className="title">
             <strong>Country:</strong> {user.country}
           </h4>
-          <h4>
+          <h4 className="title">
             <strong>Phone Number:</strong> {user.phoneNumber}
           </h4>
         </div>
