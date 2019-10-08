@@ -25,13 +25,13 @@ const Nav = props => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <div>
+            <div className="title">
               {(!props.user && (
                 <Fragment>
                   <Link to="/login" className="btn purple-gradient">
                     Log In
                   </Link>
-                  <Link to="/signup" className="btn btn-primary">
+                  <Link to="/signup" className="btn purple-gradient">
                     Sign Up
                   </Link>
                 </Fragment>

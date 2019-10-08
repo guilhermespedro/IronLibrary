@@ -38,7 +38,9 @@ export default class bookCard extends Component {
             <strong>Graffiti Artist</strong>
           </h5>
           <p className="card-text">Description. </p>
-          <Button variant="outline-primary">Read the Book</Button>
+          <Button variant="outline-primary" href="/singleBook">
+            Read the Book
+          </Button>
         </div>
       </div>
     );
