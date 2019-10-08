@@ -6,7 +6,7 @@ export default class Nav extends Component {
       <div>
         <div className="navi">
           <nav className="navbar navbar-expand-lg navbar-dark bg-custom-2 mt-0">
-            <a class="navbar-brand" href="#a">
+            <a className="navbar-brand" href="#a">
               Iron Library
             </a>
 
