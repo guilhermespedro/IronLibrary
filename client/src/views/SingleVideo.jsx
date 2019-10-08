@@ -4,9 +4,11 @@ import ListGroupItem from "react-bootstrap/ListGroupItem";
 import ListGroup from "react-bootstrap/ListGroup";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 
 export default class SingleVideo extends Component {
   render() {
+    const video = this.props.video;
     return (
       <div className="d-flex justify-content-center p-5">
         <Card style={{ width: "50rem" }}>
@@ -19,20 +21,19 @@ export default class SingleVideo extends Component {
             </Col>
             <Col>
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Description : Some quick example text to build on the card
-                  title and make up the bulk of the card's content.
-                </Card.Text>
+                {/* <Card.Title>{video.title}</Card.Title> */}
               </Card.Body>
               <ListGroup className="list-group-flush">
-                {/* <ListGroupItem>Description</ListGroupItem> */}
-                <ListGroupItem>Category</ListGroupItem>
-                <ListGroupItem>Year</ListGroupItem>
-                <ListGroupItem>ISBN</ListGroupItem>
+                {/* <ListGroupItem>{video.description}</ListGroupItem> */}
+                {/* <ListGroupItem>{video.category}</ListGroupItem> */}
+                {/* <ListGroupItem>{video.url}</ListGroupItem> */}
               </ListGroup>
               <Card.Body>
-                <Card.Link href="#">Buy now 14.50€</Card.Link>
+                <Button variant="primary">BUY NOW</Button>
+              </Card.Body>
+              <Card.Body>
+                <Button variant="outline-success">Edit</Button>
+                <Button variant="outline-danger">Delete</Button>
               </Card.Body>
             </Col>
           </Row>

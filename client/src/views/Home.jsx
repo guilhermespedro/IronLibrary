@@ -47,53 +47,52 @@ export default class HomeView extends Component {
             </Link>
           </div> */}
         <div>
-          <div className="d-flex flex-row justify-content-center">
-            <Col className="col-4 "></Col>
-            <Col className="col-8">
-              <Row>
+          <div className="d-flex flex-row justify-content-center ">
+            <Col className="col-8 ">
+              <Row className="justify-content-center justify-content-around">
                 <h2 className="title"> React </h2>
               </Row>
-              <Row>
+              <Row className="justify-content-center justify-content-around">
                 <BookCard book={this.state.book} />
                 <BookCard book={this.state.book} />
                 <BookCard book={this.state.book} />
               </Row>
-              <Row>
+              <Row className="justify-content-center justify-content-around">
                 <h2 className="title"> Express </h2>
               </Row>
-              <Row>
+              <Row className="justify-content-center justify-content-around">
                 <BookCard book={this.state.book} />
                 <BookCard book={this.state.book} />
                 <BookCard book={this.state.book} />
               </Row>
-              <Row>
+              <Row className="justify-content-center justify-content-around">
                 <h2 className="title"> JavaScript </h2>
               </Row>
-              <Row>
+              <Row className="justify-content-center justify-content-around">
                 <BookCard book={this.state.book} />
                 <BookCard book={this.state.book} />
                 <BookCard book={this.state.book} />
               </Row>
-              <Row>
+              <Row className="justify-content-center justify-content-around">
                 <h2 className="title"> NodeJS </h2>
               </Row>
-              <Row>
+              <Row className="justify-content-center justify-content-around">
                 <BookCard book={this.state.book} />
                 <BookCard book={this.state.book} />
                 <BookCard book={this.state.book} />
               </Row>
-              <Row>
+              <Row className="justify-content-center justify-content-around">
                 <h2 className="title"> HTML5/CSS3 </h2>
               </Row>
-              <Row>
+              <Row className="justify-content-center justify-content-around">
                 <BookCard book={this.state.book} />
                 <BookCard book={this.state.book} />
                 <BookCard book={this.state.book} />
               </Row>
-              <Row>
+              <Row className="justify-content-center justify-content-around">
                 <h2 className="title"> MongoDB </h2>
               </Row>
-              <Row>
+              <Row className="justify-content-center justify-content-around">
                 <BookCard book={this.state.book} />
                 <BookCard book={this.state.book} />
                 <BookCard book={this.state.book} />

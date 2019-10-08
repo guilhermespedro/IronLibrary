@@ -81,12 +81,7 @@ card-img-top {
   opacity: 1;
 }
 
-.navi {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  z-index: 2;
-  /* -webkit-background-size: cover; */
-  /* -moz-background-size: cover; */
-  /* background-size: cover; */
-  /* -o-background-size: cover; */
+/* .navi {
+  position: fixed;
   opacity: 0.7;
-}
+} */
