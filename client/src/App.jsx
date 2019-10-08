@@ -99,7 +99,7 @@ export default class App extends Component {
                 path="/login"
                 verify={this.verifyUnauthenticated}
                 render={props => (
-                  <LogInView {...props} loadUser={this.loadUser} />
+                  <LogInView {...props} exact loadUser={this.loadUser} />
                 )}
               />
               <ProtectedRoute

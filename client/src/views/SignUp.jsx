@@ -38,7 +38,8 @@ export default class SignUpView extends Component {
       phoneNumber
     })
       .then(user => {
-        this.props.history.push("/profile/");
+        this.props.loadUser(user);
+        this.props.history.push("/profile");
       })
       .catch(error => {
         console.log(error);
@@ -48,8 +49,8 @@ export default class SignUpView extends Component {
   render() {
     return (
       <div className="title">
-         <div className="d-flex justify-content-center p-4">
-      <h3>Please Sign Up</h3>
+        <div className="d-flex justify-content-center p-4">
+          <h3>Please Sign Up</h3>
         </div>
         <div className="d-flex justify-content-center p-3">
           <Form

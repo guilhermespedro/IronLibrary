@@ -33,7 +33,7 @@ export default class LogInView extends Component {
     })
       .then(user => {
         this.props.loadUser(user);
-        this.props.history.push("/profile/");
+        this.props.history.push("/library/");
       })
       .catch(error => {
         console.log(error);
@@ -44,7 +44,7 @@ export default class LogInView extends Component {
     return (
       <div className="title">
         <div className="d-flex justify-content-center p-4">
-      <h3>Please Login</h3>
+          <h3>Please Login</h3>
         </div>
         <div className="d-flex justify-content-center p-3">
           <Form
