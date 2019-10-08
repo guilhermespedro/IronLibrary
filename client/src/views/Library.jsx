@@ -55,16 +55,16 @@ export default class Library extends Component {
             <h5 className="title"> Filter by Price </h5>
             <ul className="title">
               <input type="radio" name="gender" value="1" />
-              0€ - 10€
+              0€ - 9€
             </ul>
             <ul className="title">
-              <input type="radio" name="gender" value="2" /> 10€ - 20€
+              <input type="radio" name="gender" value="2" /> 10€ - 19€
             </ul>
             <ul className="title">
-              <input type="radio" name="gender" value="3" /> 20€ - 30€
+              <input type="radio" name="gender" value="3" /> 20€ - 29€
             </ul>
             <ul className="title">
-              <input type="radio" name="gender" value="4" /> 30€ - 40€
+              <input type="radio" name="gender" value="4" /> 30€ - 39€
             </ul>
             <ul className="title">
               <input type="radio" name="gender" value="5" /> +40€
