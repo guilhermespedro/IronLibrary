@@ -29,10 +29,8 @@ export default class HomeView extends Component {
   render() {
     if (!this.state.book) return <div>Loading...</div>;
     return (
-      <body>
-        <div className="primeiraimg">
-
-        </div>
+      <div>
+        <div className="primeiraimg"></div>
         {/* <div>
             <Link to="/login" className="btn btn-danger">
               Log In
@@ -103,7 +101,7 @@ export default class HomeView extends Component {
             </Col>
           </div>
         </div>
-      </body>
+      </div>
     );
   }
 }
