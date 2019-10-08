@@ -9,7 +9,7 @@ const Nav = props => {
     <div>
       <div className="navi">
         <nav className="navbar navbar-expand-lg navbar-dark bg-custom-2 mt-0">
-          <a className="navbar-brand" href="#a">
+          <a className="navbar-brand" href="library">
             Iron Library
           </a>
 
