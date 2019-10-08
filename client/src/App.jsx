@@ -111,24 +111,24 @@ export default class App extends Component {
               <Route path="/createvideo" component={CreateVideoView} />
               <Route path="/editbook" component={EditBookView} />
               <Route path="/editvideo" component={EditVideoView} />
-              <Route
+              <ProtectedRoute
                 path="/signup"
                 verify={this.verifyUnauthenticated}
                 render={props => (
                   <SignUpView {...props} exact loadUser={this.loadUser} />
                 )}
               />
-              <Route
+              <ProtectedRoute
                 path="/library"
                 component={LibraryView}
                 verify={this.verifyAuthenticated}
               />
-              <Route
+              <ProtectedRoute
                 path="/singlebook"
                 component={SingleBookView}
                 verify={this.verifyAuthenticated}
               />
-              <Route
+              <ProtectedRoute
                 path="/singlevideo"
                 component={SingleVideoView}
                 verify={this.verifyAuthenticated}
