@@ -15,29 +15,29 @@ export default class bookCard extends Component {
       //     </Card.Body>
       //   </Card>
       // </div>
-      <div class="card card-cascade narrower w-25 p-1">
-        <div class="view view-cascade overlay">
+      <div className="card card-cascade narrower w-25 p-1 width=14rem">
+        <div className="view view-cascade overlay">
           <img
-            class="card-img-top"
+            className="card-img-top"
             src="https://prodimage.images-bn.com/pimages/9781787287020_p0_v2_s550x406.jpg"
             alt="Card image cap"
           />
           <a>
-            <div class="mask rgba-white-slight"></div>
+            <div className="mask rgba-white-slight"></div>
           </a>
           <a href="#!">
-            <div class="mask rgba-white-slight"></div>
+            <div className="mask rgba-white-slight"></div>
           </a>
         </div>
 
-        <div class="card-body card-body-cascade text-center">
-          <h4 class="card-title">
+        <div className="card-body card-body-cascade text-center">
+          <h4 className="card-title">
             <strong>Book Title</strong>
           </h4>
-          <h5 class="blue-text pb-2">
+          <h5 className="blue-text pb-2">
             <strong>Graffiti Artist</strong>
           </h5>
-          <p class="card-text">Description. </p>
+          <p className="card-text">Description. </p>
           <Button variant="outline-primary">Read the Book</Button>
         </div>
       </div>
