@@ -11,7 +11,6 @@ import Row from "react-bootstrap/Row";
 import BookCard from "../component/bookCard";
 import VideoCard from "../component/videoCard";
 import { list as listService } from "../services/book-api";
-import "node_modules/video-react/dist/video-react.css";
 
 import LogIn from "./LogIn";
 
