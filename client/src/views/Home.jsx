@@ -46,7 +46,7 @@ export default class HomeView extends Component {
               Admin Profile
             </Link>
           </div> */}
-        <div className="homepage">
+        <div>
           <div className="d-flex flex-row justify-content-center">
             <Col className="col-4 "></Col>
             <Col className="col-8">

@@ -7,7 +7,7 @@ import { withRouter } from "react-router";
 const Nav = props => {
   return (
     <div>
-      <div className="navi">
+      <div className="navi ">
         <nav className="navbar navbar-expand-lg navbar-dark bg-custom-2 mt-0">
           <a className="navbar-brand" href="library">
             Iron Library
