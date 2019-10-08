@@ -26,20 +26,26 @@ const Nav = props => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <div>
-              <Link to="/login" className="btn purple-gradient">
-                Log In
-              </Link>
-              <Link to="/signup" className="btn btn-primary">
-                Sign Up
-              </Link>
-              <Link to="/profile" className="btn btn-primary">
-                User Profile
-              </Link>
-              <Link to="/">
-                <Form onSubmit={props.logOut}>
-                  <Button type="submit">Log Out</Button>
-                </Form>
-              </Link>
+              {(!props.user && (
+                <Fragment>
+                  <Link to="/login" className="btn purple-gradient">
+                    Log In
+                  </Link>
+                  <Link to="/signup" className="btn btn-primary">
+                    Sign Up
+                  </Link>
+                </Fragment>
+              )) || (
+                <Fragment>
+                  <Link to="/profile" className="btn btn-primary">
+                    User Profile
+                  </Link>
+
+                  <Form onSubmit={props.logOut}>
+                    <Button type="submit">Log Out</Button>
+                  </Form>
+                </Fragment>
+              )}
             </div>
             <ul className="navbar-nav ml-auto py-md-3">
               <li className="nav-item active">
