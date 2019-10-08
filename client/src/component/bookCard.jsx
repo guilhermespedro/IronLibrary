@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 
 export default class bookCard extends Component {
@@ -15,14 +14,14 @@ export default class bookCard extends Component {
       //     </Card.Body>
       //   </Card>
       // </div>
-      <div className="card card-cascade narrower w-25 p-1 width=14rem">
+      <div className="card card-cascade narrower w-25 p-1">
         <div className="view view-cascade overlay">
           <img
             className="card-img-top"
             src="https://prodimage.images-bn.com/pimages/9781787287020_p0_v2_s550x406.jpg"
             alt="Card image cap"
           />
-          <a>
+          <a href="#!!">
             <div className="mask rgba-white-slight"></div>
           </a>
           <a href="#!">

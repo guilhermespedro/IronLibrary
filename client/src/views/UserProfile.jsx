@@ -25,7 +25,7 @@ export default class UserProfileView extends Component {
 
   onFormSubmit(event) {
     event.preventDefault();
-    const { name, email, password, country, phonenumber } = this.state;
+    const { name, email, country, phonenumber } = this.state;
     editService({
       name,
       email,

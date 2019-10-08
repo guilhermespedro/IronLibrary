@@ -1,11 +1,5 @@
 import React, { Component } from "react";
 
-import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-// import Images from "react-bootstrap/Images"
-import Carousel from "react-bootstrap/Carousel";
-import Card from "react-bootstrap/Card";
-import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import BookCard from "../component/bookCard";
@@ -35,7 +29,7 @@ export default class HomeView extends Component {
   render() {
     if (!this.state.book) return <div>Loading...</div>;
     return (
-      <body background="/images/space-bg1.jpg">
+      <body>
         <div>
           {/* <div>
             <Link to="/login" className="btn btn-danger">
@@ -55,7 +49,7 @@ export default class HomeView extends Component {
           <div></div>
           <div className="homepage">
             <div className="d-flex flex-row justify-content-center">
-              <Col className="col-4"></Col>
+              <Col className="col-4 "></Col>
               <Col className="col-8">
                 <Row>
                   <h2 className="title"> React </h2>

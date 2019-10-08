@@ -24,8 +24,9 @@ body {
   margin: 0;
   padding: 50px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: url("/images/space-bg1.jpg") no-repeat center center fixed;
-  /* background-image: url("/images/galax.jpg"); */
+  position: relative;
+  z-index: 2;
+  background: url("/public/images/ironlib.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

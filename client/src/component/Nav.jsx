@@ -25,7 +25,7 @@ const Nav = props => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <div className="title">
+            <div>
               {(!props.user && (
                 <Fragment>
                   <Link to="/login" className="btn purple-gradient">
