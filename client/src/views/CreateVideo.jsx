@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { create as createVideoService } from "./../services/video-api";
+// import { load as loadVideoApi } from "./../services/video-api";
 
 export default class CreateVideoView extends Component {
   constructor(props) {

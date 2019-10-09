@@ -5,6 +5,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import { edit as editService } from "../services/video-api";
+import { remove as removeService } from "../services/video-api";
 
 export default class SingleVideo extends Component {
   render() {
