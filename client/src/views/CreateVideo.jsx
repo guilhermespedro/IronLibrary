@@ -74,7 +74,7 @@ export default class CreateVideoView extends Component {
 
 
 
-              
+
               </Form.Control>
             </Form.Group>
             <Form.Group size="sm">
