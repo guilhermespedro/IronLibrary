@@ -40,7 +40,7 @@ export default class CreateVideoView extends Component {
           <br />
         </div>
         <div className="d-flex justify-content-center p-1">
-          <Form className=" w-25 p-3">
+          <Form className=" w-25 p-3" onSubmit={this.onFormSubmit}>
             <Form.Group>
               <Form.Label>Title</Form.Label>
               <Form.Control name="title" />
