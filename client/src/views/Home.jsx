@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import BookCard from "../component/bookCard";
-import VideoCard from "../component/videoCard";
-import { list as listService } from "../services/book-api";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import BookCard from '../component/bookCard';
+import VideoCard from '../component/videoCard';
+import { list as listService } from '../services/book-api';
 
-import LogIn from "./LogIn";
+import LogIn from './LogIn';
 
 export default class HomeView extends Component {
   constructor(props) {
@@ -31,11 +31,10 @@ export default class HomeView extends Component {
     return (
       <div>
         <div className="d-flex flex-row justify-content-center p-5">
-        <div className="headline">
-
-        {/* <h1>Iron Library</h1>
-        <p>Explore the most demanding coding languages in 2019</p> */}
-        </div>
+          <div className="headline">
+            <h1 className="d-flex justify-content-center">Iron Library</h1>
+            <p>Explore the most demanding coding languages in 2019</p>
+          </div>
         </div>
         <div className="primeiraimg"></div>
         {/* <div>

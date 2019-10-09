@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import { withRouter } from "react-router";
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { withRouter } from 'react-router';
 
 const Nav = props => {
   return (
@@ -25,7 +25,7 @@ const Nav = props => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <div className="d-flex flex-row justify-content-center">
+            <div className="d-flex flex-row collapse navbar-collapse justify-content-end">
               {(!props.user && (
                 <Fragment>
                   <Link to="/login" className="btn-login">
@@ -37,7 +37,7 @@ const Nav = props => {
                 </Fragment>
               )) || (
                 <Fragment>
-                  <Link to="/profile" className="btn btn-primary">
+                  <Link to="/profile" className="btn-profile">
                     User Profile
                   </Link>
 
