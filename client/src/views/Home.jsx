@@ -32,26 +32,14 @@ export default class HomeView extends Component {
       <div>
         <div className="d-flex flex-row justify-content-center p-5">
           <div className="headline">
+            <br></br>
+            <br></br>
+            <br></br>
             <h1 className="d-flex justify-content-center">Iron Library</h1>
             <p>Explore the most demanding coding languages in the world</p>
           </div>
         </div>
         <div className="primeiraimg"></div>
-        {/* <div>
-            <Link to="/login" className="btn btn-danger">
-              Log In
-            </Link>
-
-            <Link to="/signup" className="btn btn-primary">
-              Sign Up
-            </Link>
-            <Link to="/userProfile" className="btn btn-primary">
-              User Profile
-            </Link>
-            <Link to="/adminProfile" className="btn btn-primary">
-              Admin Profile
-            </Link>
-          </div> */}
         <div>
           <div className="d-flex flex-row justify-content-center ">
             <Col className="col-8 ">

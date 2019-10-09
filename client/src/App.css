@@ -27,7 +27,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   position: relative;
   z-index: 2;
-  background: url('/images/finishbackg.jpg') no-repeat center center fixed;
+  background: url('/images/finished.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -40,7 +40,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   position: relative;
   z-index: 2;
-  background: url('/images/finishbackg.jpg') no-repeat center center fixed;
+  background: url('/images/finished') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -102,6 +102,6 @@ card-img-top {
 } */
 
 .headline {
-  color: red;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: blueviolet;
+  font-family: fantasy;
 }
