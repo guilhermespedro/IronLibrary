@@ -33,8 +33,8 @@ export default class HomeView extends Component {
         <div className="d-flex flex-row justify-content-center p-5">
         <div className="headline">
 
-        <h1>Iron Library</h1>
-        <p>Explore the most demanding coding languages in 2019</p>
+        {/* <h1>Iron Library</h1>
+        <p>Explore the most demanding coding languages in 2019</p> */}
         </div>
         </div>
         <div className="primeiraimg"></div>
