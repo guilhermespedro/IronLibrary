@@ -25,7 +25,7 @@ export default class PostForm extends Component {
   render() {
     return (
       <Form onSubmit={this.onFormSubmit}>
-        <Form.Group>
+        <Form.Group className="title">
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="text"
@@ -35,7 +35,7 @@ export default class PostForm extends Component {
             onChange={this.onValueChange}
           />
         </Form.Group>
-        <Form.Group>
+        <Form.Group className="title">
           <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
@@ -45,7 +45,7 @@ export default class PostForm extends Component {
             onChange={this.onValueChange}
           />
         </Form.Group>
-        <Form.Group>
+        <Form.Group className="title">
           <Form.Label>Country</Form.Label>
           <Form.Control
             type="text"
@@ -55,7 +55,7 @@ export default class PostForm extends Component {
             onChange={this.onValueChange}
           />
         </Form.Group>
-        <Form.Group>
+        <Form.Group className="title">
           <Form.Label>Phone Number</Form.Label>
           <Form.Control
             type="text"
