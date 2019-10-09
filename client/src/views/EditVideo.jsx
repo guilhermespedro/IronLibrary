@@ -6,12 +6,18 @@ export default class EditVideoView extends Component {
     render() {
         return (
             <div>
-                <div className="d-flex p-5">
+                <div className="editVideo">
+
+                <div className="d-flex justify-content-center p-5">
 
             <h3>Update Video Details</h3>
             <br/>
                 </div>
-          <div className="d-flex p-1">
+                </div>
+
+                <div className="lettering">
+
+          <div className="d-flex justify-content-center p-1">
             <Form className=" w-25 p-3">
               <Form.Group>
                 <Form.Label>Title</Form.Label>
@@ -33,7 +39,7 @@ export default class EditVideoView extends Component {
                 <Form.Label>Duration</Form.Label>
                 <Form.Control
                   name="duration"
-                />
+                  />
               </Form.Group>
               
               
@@ -42,13 +48,14 @@ export default class EditVideoView extends Component {
                 <Form.Control
                   name="file"
                   type="uploadfile"
-                ></Form.Control>
+                  ></Form.Control>
               </Form.Group>
               
           
               <Button type="submit">Update</Button>
             </Form>
           </div>
+                  </div>
         </div>
         )
     }

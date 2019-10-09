@@ -14,13 +14,24 @@ export default class CreateVideoView extends Component {
       url: ""
     };
     this.onFormSubmit = this.onFormSubmit.bind(this);
+    this.onValueChange = this.onValueChange.bind(this);
   }
+
+
+  onValueChange(event) {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({
+      [name]: value
+    });
+  }
+
   onFormSubmit(event) {
     event.preventDefault();
-    const { title, description, category, url } = this.state;
+    const { title, duration, category, url } = this.state;
     createVideoService({
       title,
-      description,
+      duration,
       category,
       url
     })
@@ -43,15 +54,38 @@ export default class CreateVideoView extends Component {
           <Form className=" w-25 p-3" onSubmit={this.onFormSubmit}>
             <Form.Group>
               <Form.Label>Title</Form.Label>
-              <Form.Control name="title" />
+              <Form.Control 
+              placeholder="Title"
+              name="name"
+              type="text"
+              value={this.state.name}
+              onChange={this.onValueChange} />
             </Form.Group>
             <Form.Group size="sm">
-              <Form.Label>Description</Form.Label>
-              <Form.Control name="description"></Form.Control>
+              <Form.Label>Duration</Form.Label>
+              <Form.Control
+              placeholder="Duration"
+              name="duration"
+              type="text"
+              value={this.state.name}
+              onChange={this.onValueChange}
+              >
+              
+
+
+
+              
+              </Form.Control>
             </Form.Group>
             <Form.Group size="sm">
               <Form.Label>Category</Form.Label>
-              <Form.Control name="category" />
+              <Form.Control 
+              placeholder="Category"
+              name="category"
+              type="text"
+              value={this.state.name}
+              onChange={this.onValueChange}
+              />
             </Form.Group>
             <Form.Group size="sm">
               <Form.Label>URL</Form.Label>
