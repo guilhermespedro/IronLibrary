@@ -6,6 +6,8 @@ array: []
 },
 
 {
+
+    
     _id:1,
     name: "Any",
     array: [0,9]
@@ -47,3 +49,7 @@ const handlePrice = value => {
         }
     }
 }
+
+
+
+

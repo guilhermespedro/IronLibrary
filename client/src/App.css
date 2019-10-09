@@ -61,6 +61,18 @@ body {
   -o-background-size: cover;
 }
 
+.headline {
+  color: aliceblue
+}
+
+.btn-login{
+  color: aliceblue
+}
+
+.btn-signup {
+  color: aliceblue
+}
+
 .bg-custom-1 {
   background-color: #85144b;
 }

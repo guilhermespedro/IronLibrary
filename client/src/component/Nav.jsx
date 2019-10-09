@@ -25,13 +25,13 @@ const Nav = props => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <div>
+            <div className = "d-flex flex-row justify-content-center">
               {(!props.user && (
                 <Fragment>
-                  <Link to="/login" className="btn purple-gradient">
+                  <Link to="/login" className="btn-login">
                     Log In
                   </Link>
-                  <Link to="/signup" className="btn purple-gradient">
+                  <Link to="/signup" className="btn-signup">
                     Sign Up
                   </Link>
                 </Fragment>
