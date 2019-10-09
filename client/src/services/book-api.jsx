@@ -1,13 +1,13 @@
-import axios from "axios";
+import axios from 'axios';
 
 const bookApi = axios.create({
-  baseURL: "/api/product/book"
+  baseURL: '/api/product/book'
 });
 
 export const list = () => {
   return new Promise((resolve, reject) => {
     bookApi
-      .get("/")
+      .get('/')
       .then(response => {
         resolve(response.data.books);
       })
@@ -17,10 +17,11 @@ export const list = () => {
   });
 };
 
-export const load = id => {
+export const load = isbn => {
   return new Promise((resolve, reject) => {
+    console.log(isbn);
     bookApi
-      .get(`/${id}`)
+      .get(`/${isbn}`)
       .then(response => {
         resolve(response.data.book);
       })
@@ -33,7 +34,7 @@ export const load = id => {
 export const create = bookData => {
   return new Promise((resolve, reject) => {
     bookApi
-      .post("/create", bookData)
+      .post('/create', bookData)
       .then(response => {
         resolve(response.data.book);
       })
@@ -43,10 +44,10 @@ export const create = bookData => {
   });
 };
 
-export const edit = (id, updatedBook) => {
+export const edit = (isbn, updatedBook) => {
   return new Promise((resolve, reject) => {
     bookApi
-      .patch(`/edit/${id}`, updatedBook)
+      .patch(`/edit/${isbn}`, updatedBook)
       .then(response => {
         resolve(response.data.book);
       })
@@ -56,23 +57,10 @@ export const edit = (id, updatedBook) => {
   });
 };
 
-export const upload = (id, uploadCoverBook) => {
+export const remove = isbn => {
   return new Promise((resolve, reject) => {
     bookApi
-      .patch(`/upload/${id}`, uploadCoverBook)
-      .then(response => {
-        resolve(response.data.book);
-      })
-      .catch(error => {
-        reject(error);
-      });
-  });
-};
-
-export const remove = id => {
-  return new Promise((resolve, reject) => {
-    bookApi
-      .delete(`/delete/${id}`)
+      .delete(`/${isbn}`)
       .then(() => {
         resolve();
       })

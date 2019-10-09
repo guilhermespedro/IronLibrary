@@ -1,35 +1,35 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import "./App.css";
+import './App.css';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import ProtectedRoute from "./component/ProtectedRoute";
+import ProtectedRoute from './component/ProtectedRoute';
 import {
   verify as verifyService,
   logOut as logOutService
-} from "./services/authentication-api";
+} from './services/authentication-api';
 
-import LogInView from "./views/LogIn";
-import SignUpView from "./views/SignUp";
-import ProfileView from "./views/UserProfile";
-import HomeView from "./views/Home";
-import ErrorView from "./views/Error";
-import SingleBookView from "./views/SingleBook";
-import SingleVideoView from "./views/SingleVideo";
-import LibraryView from "./views/Library";
-import CreateBookView from "./views/CreateBook";
-import CreateVideoView from "./views/CreateVideo";
-import EditVideoView from "./views/EditVideo";
-import EditBookView from "./views/EditBook";
+import LogInView from './views/LogIn';
+import SignUpView from './views/SignUp';
+import ProfileView from './views/UserProfile';
+import HomeView from './views/Home';
+import ErrorView from './views/Error';
+import SingleBookView from './views/SingleBook';
+import SingleVideoView from './views/SingleVideo';
+import LibraryView from './views/Library';
+import CreateBookView from './views/CreateBook';
+import CreateVideoView from './views/CreateVideo';
+import EditVideoView from './views/EditVideo';
+import EditBookView from './views/EditBook';
 
-import BookPopUpView from "./component/bookPopUp";
-import Nav from "./component/Nav";
+import BookPopUpView from './component/bookPopUp';
+import Nav from './component/Nav';
 
 export default class App extends Component {
   constructor(props) {
@@ -124,14 +124,18 @@ export default class App extends Component {
                 verify={this.verifyAuthenticated}
               />
               <ProtectedRoute
-                path="/singlebook"
-                component={SingleBookView}
+                path="/singlebook/:isbn"
                 verify={this.verifyAuthenticated}
+                render={props => (
+                  <SingleBookView {...props} exact loadUser={this.loadUser} />
+                )}
               />
               <ProtectedRoute
                 path="/singlevideo"
-                component={SingleVideoView}
                 verify={this.verifyAuthenticated}
+                render={props => (
+                  <SingleVideoView {...props} exact loadUser={this.loadUser} />
+                )}
               />
               <Route path="/bookpopup" component={BookPopUpView} />
               <Route path="/error/:code" component={ErrorView} />

@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image';
 
 import { load as loadBookApi } from './../services/google-books-api';
 import { create as createBookService } from './../services/book-api';
@@ -53,9 +52,19 @@ export default class CreateProductView extends Component {
       category,
       isbn,
       price
-    } = this.state;
+    } = {
+      title: this.state.book.volumeInfo.title,
+      thumbnail: this.state.book.volumeInfo.imageLinks.thumbnail,
+      year: this.state.book.volumeInfo.publishedDate,
+      description: this.state.book.volumeInfo.description,
+      authors: this.state.book.volumeInfo.authors,
+      category: this.state.category,
+      isbn: this.state.newIsbn,
+      price: this.state.price
+    };
     createBookService({
-      title: this.state.newBook.thumbnail,
+      title,
+      thumbnail,
       year,
       description,
       authors,
@@ -73,7 +82,6 @@ export default class CreateProductView extends Component {
 
   render() {
     const book = this.state.book;
-
     return (
       <div>
         <div className="d-flex p-5">
@@ -89,13 +97,35 @@ export default class CreateProductView extends Component {
                 type="number"
                 name="newIsbn"
                 placeholder="ISBN"
-                value={this.state.newIsbn}
+                value={this.state.isbn}
                 onChange={this.onValueChange}
               />
-            </Form.Group>
-            <Form.Group size="sm">
               <Form.Label>Category</Form.Label>
-              <Form.Control name="category"></Form.Control>
+              <Form.Control
+                as="select"
+                name="category"
+                defaultValue=""
+                value={this.state.category}
+                onChange={this.onValueChange}
+              >
+                <option disabled value="">
+                  Select Category
+                </option>
+                <option>HTML/CSS</option>
+                <option>JAVASCRIPT</option>
+                <option>MONGODB</option>
+                <option>NODE</option>
+                <option>REACT</option>
+                <option>EXPRESS</option>
+              </Form.Control>
+              <Form.Label>Amazon Link</Form.Label>
+              <Form.Control
+                type="text"
+                name="price"
+                placeholder="ISBN"
+                value={this.state.price}
+                onChange={this.onValueChange}
+              />
             </Form.Group>
             <Button type="submit">Upload Book</Button>
           </Form>
