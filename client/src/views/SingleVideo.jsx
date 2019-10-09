@@ -5,6 +5,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import ReactPlayer from "react-player";
 import { edit as editService } from "../services/video-api";
 import { remove as removeService } from "../services/video-api";
 
@@ -16,22 +17,28 @@ export default class SingleVideo extends Component {
         <Card style={{ width: "50rem" }}>
           <Row>
             <Col>
-              <Card.Img
-                variant="top"
-                src="https://s2982.pcdn.co/wp-content/uploads/2014/08/HP_hc_new_6.jpeg"
+              <ReactPlayer
+                url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                width="100%"
+                height="100%"
+                volume="40%"
               />
             </Col>
             <Col>
               <Card.Body>
-                {/* <Card.Title>{video.title}</Card.Title> */}
+                <Card.Title>title</Card.Title> 
+                {/* {video.title} */}
               </Card.Body>
               <ListGroup className="list-group-flush">
-                {/* <ListGroupItem>{video.description}</ListGroupItem> */}
-                {/* <ListGroupItem>{video.category}</ListGroupItem> */}
-                {/* <ListGroupItem>{video.url}</ListGroupItem> */}
+                <ListGroupItem>description</ListGroupItem>
+                {/* {video.description} */}
+                <ListGroupItem>category</ListGroupItem>
+                {/* {video.category} */}
+                <ListGroupItem>url</ListGroupItem>
+                {/* {video.url} */}
               </ListGroup>
               <Card.Body>
-                <Button variant="primary">BUY NOW</Button>
+                {/* <Button variant="primary">BUY NOW</Button> */}
               </Card.Body>
               <Card.Body>
                 <Button variant="outline-success">Edit</Button>
