@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const bookSchema = new mongoose.Schema(
   {
@@ -25,11 +25,7 @@ const bookSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: ["HTML", "CSS", "JAVASCRIPT", "MONGODB", "NODE", "REACT", "EXPRESS"]
-    },
-    cover: {
-      type: String,
-      trim: true
+      enum: ['HTML', 'CSS', 'JAVASCRIPT', 'MONGODB', 'NODE', 'REACT', 'EXPRESS']
     },
     isbn: {
       type: String,
@@ -45,12 +41,12 @@ const bookSchema = new mongoose.Schema(
   }
 );
 
-const findByIsbnStatic = require("./statics/find-by-isbn");
-const createBookStatic = require("./statics/create");
+const findByIsbnStatic = require('./statics/find-by-isbn');
+const createBookStatic = require('./statics/create');
 
 bookSchema.statics.findByIsbn = findByIsbnStatic;
 bookSchema.statics.createBook = createBookStatic;
 
-const Book = mongoose.model("Book", bookSchema);
+const Book = mongoose.model('Book', bookSchema);
 
 module.exports = Book;
