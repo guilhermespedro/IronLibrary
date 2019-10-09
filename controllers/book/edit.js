@@ -1,15 +1,16 @@
-"use strict";
+'use strict';
 
-const Book = require("../../models/book");
+const Book = require('../../models/book');
 
 module.exports = (req, res, next) => {
-  const id = req.params.id;
-  const { isbn, price } = req.body;
+  const isbn = req.params.isbn;
+  const { category, price, link } = req.body;
 
-  Book.findByIdAndUpdate(
-    { _id: id },
+  Book.findOneAndUpdate(
+    { isbn: isbn },
     {
-      ...(isbn && { isbn }),
+      ...(category && { category }),
+      ...(link && { link }),
       ...(price && { price })
     },
     { new: true }
@@ -18,7 +19,7 @@ module.exports = (req, res, next) => {
       if (book) {
         res.json({ book });
       } else {
-        next(new Error("BOOK_NOT_EDITED"));
+        next(new Error('BOOK_NOT_EDITED'));
       }
     })
     .catch(error => {

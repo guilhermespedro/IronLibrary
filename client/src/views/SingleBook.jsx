@@ -3,6 +3,9 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+
+import EditBookForm from './../component/EditBookForm';
+
 import { verify as verifyService } from './../services/authentication-api';
 import {
   edit as editBookApi,
@@ -19,6 +22,8 @@ export default class SingleBook extends Component {
       loaded: false
     };
     this.deleteBook = this.deleteBook.bind(this);
+    this.onFormValueChange = this.onFormValueChange.bind(this);
+    this.onEditBook = this.onEditBook.bind(this);
   }
 
   loadBook() {
@@ -44,6 +49,30 @@ export default class SingleBook extends Component {
         this.setState({
           loaded: true
         });
+        console.log(error);
+      });
+  }
+
+  onFormValueChange(data) {
+    this.setState({
+      book: {
+        ...this.state.book,
+        ...data
+      }
+    });
+  }
+
+  onEditBook(event) {
+    // event.preventDefault();
+    const { isbn, updatedBook } = {
+      isbn: this.state.book.isbn,
+      updatedBook: this.state.book
+    };
+    editBookApi(isbn, updatedBook)
+      .then(() => {
+        this.props.history.push(`/singlebook/${isbn}`);
+      })
+      .catch(error => {
         console.log(error);
       });
   }
@@ -77,18 +106,34 @@ export default class SingleBook extends Component {
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>
                   <Card.Text>{book.description}</Card.Text>
-                  <Card.Text>{book.category}</Card.Text>
-                  <Card.Text>{book.year}</Card.Text>
-                  <Card.Text>{book.isbn}</Card.Text>
+                  {(this.state.loaded && user.role === 'admin' && (
+                    <EditBookForm
+                      value={book}
+                      onValueChange={this.onFormValueChange}
+                    ></EditBookForm>
+                  )) || (
+                    <div>
+                      <Card.Text>Category: {book.category}</Card.Text>
+                      <Card.Text>Price: {book.price}</Card.Text>
+                    </div>
+                  )}
+                  <Card.Text>Published: {book.year}</Card.Text>
+                  <Card.Text>ISBN: {book.isbn}</Card.Text>
                 </Card.Body>
                 <Card.Body>
-                  <Button variant="primary" target="popup" href={book.price}>
+                  <Button variant="primary" target="popup" href={book.link}>
                     BUY NOW
                   </Button>
                 </Card.Body>
                 {this.state.loaded && user.role === 'admin' && (
                   <Card.Body>
-                    <Button variant="outline-success">Edit</Button>
+                    <Button
+                      type="submit"
+                      variant="outline-success"
+                      onClick={this.onEditBook}
+                    >
+                      Edit
+                    </Button>
                     <Button onClick={this.deleteBook} variant="outline-danger">
                       Delete
                     </Button>

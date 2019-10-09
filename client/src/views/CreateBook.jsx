@@ -5,13 +5,13 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 import { load as loadBookApi } from './../services/google-books-api';
-import { create as createBookService } from './../services/book-api';
+import { create as createBookApi } from './../services/book-api';
 import CreateBookComponent from './../component/CreateBook';
 export default class CreateProductView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      newIsbn: null,
+      isbn: null,
       book: null
     };
     this.onValueChange = this.onValueChange.bind(this);
@@ -19,8 +19,8 @@ export default class CreateProductView extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const isbn = this.state.newIsbn;
-    if (isbn !== prevState.newIsbn) {
+    const isbn = this.state.isbn;
+    if (isbn !== prevState.isbn) {
       loadBookApi(isbn)
         .then(newbook => {
           this.setState({
@@ -51,6 +51,7 @@ export default class CreateProductView extends Component {
       authors,
       category,
       isbn,
+      link,
       price
     } = {
       title: this.state.book.volumeInfo.title,
@@ -59,10 +60,11 @@ export default class CreateProductView extends Component {
       description: this.state.book.volumeInfo.description,
       authors: this.state.book.volumeInfo.authors,
       category: this.state.category,
-      isbn: this.state.newIsbn,
+      isbn: this.state.isbn,
+      link: this.state.link,
       price: this.state.price
     };
-    createBookService({
+    createBookApi({
       title,
       thumbnail,
       year,
@@ -70,10 +72,11 @@ export default class CreateProductView extends Component {
       authors,
       category,
       isbn,
+      link,
       price
     })
       .then(() => {
-        this.props.history.push('/singlebook');
+        this.props.history.push(`/singlebook/${this.state.isbn}`);
       })
       .catch(error => {
         console.log(error);
@@ -95,7 +98,7 @@ export default class CreateProductView extends Component {
               <Form.Label>ISBN</Form.Label>
               <Form.Control
                 type="number"
-                name="newIsbn"
+                name="isbn"
                 placeholder="ISBN"
                 value={this.state.isbn}
                 onChange={this.onValueChange}
@@ -121,8 +124,16 @@ export default class CreateProductView extends Component {
               <Form.Label>Amazon Link</Form.Label>
               <Form.Control
                 type="text"
+                name="link"
+                placeholder="Amazon"
+                value={this.state.link}
+                onChange={this.onValueChange}
+              />
+              <Form.Label>Price</Form.Label>
+              <Form.Control
+                type="text"
                 name="price"
-                placeholder="ISBN"
+                placeholder="Price"
                 value={this.state.price}
                 onChange={this.onValueChange}
               />

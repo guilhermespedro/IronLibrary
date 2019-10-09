@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const Book = require("../../models/book");
+const Book = require('../../models/book');
 
 module.exports = (req, res, next) => {
   const {
@@ -12,7 +12,8 @@ module.exports = (req, res, next) => {
     category,
     cover,
     isbn,
-    price
+    price,
+    link
   } = req.body;
   Book.createBook({
     title,
@@ -23,7 +24,8 @@ module.exports = (req, res, next) => {
     category,
     cover,
     isbn,
-    price
+    price,
+    link
   })
     .then(book => {
       res.json({ book });

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 module.exports = function({
   title,
@@ -8,14 +8,15 @@ module.exports = function({
   authors,
   category,
   isbn,
-  price
+  price,
+  link
 }) {
   const Model = this;
 
   return Model.findByIsbn(isbn)
     .then(book => {
       if (book) {
-        throw new Error("BOOK_ALREADY_EXISTS");
+        throw new Error('BOOK_ALREADY_EXISTS');
       } else {
         return Model.create({
           title,
@@ -25,7 +26,8 @@ module.exports = function({
           authors,
           category,
           isbn: isbn,
-          price
+          price,
+          link
         });
       }
     })
@@ -34,6 +36,6 @@ module.exports = function({
     })
     .catch(error => {
       console.log(error);
-      return Promise.reject(new Error("ERROR_CREATING_BOOK"));
+      return Promise.reject(new Error('ERROR_CREATING_BOOK'));
     });
 };
