@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import BookCard from "../component/bookCard";
-import VideoCard from "../component/videoCard";
-import { list as listService } from "../services/book-api";
+import React, { Component } from 'react';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Form from 'react-bootstrap/Form';
+import BookCard from '../component/bookCard';
+import VideoCard from '../component/videoCard';
+import { list as listService } from '../services/book-api';
 
 export default class Library extends Component {
   constructor(props) {
@@ -11,6 +12,10 @@ export default class Library extends Component {
     this.state = {
       book: null
     };
+    this.componentDidMount = this.componentDidMount.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleOptionChange = this.handleOptionChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -25,58 +30,122 @@ export default class Library extends Component {
       });
   }
 
+  handleChange(event) {
+    this.props.searchValue(event.target.value);
+  }
+  handleOptionChange = changeEvent => {
+    this.setState({
+      selectedOption: changeEvent.target.value
+    });
+  };
+
+  handleFormSubmit = formSubmitEvent => {
+    formSubmitEvent.preventDefault();
+  };
+
   render() {
     if (!this.state.book) return <div>Loading...</div>;
     return (
       <div className="d-flex flex-row">
         <Col className="col-4">
-          <ul className="title">
-            <h5 className="title"> Filter by Content Category </h5>{" "}
-            <ul>
-              <input type="radio" name="gender" value="react" /> React
-            </ul>
-            <ul>
-              <input type="radio" name="gender" value="javascript" /> JavaScript
-            </ul>
-            <ul>
-              <input type="radio" name="gender" value="express" /> Express
-            </ul>
-            <ul>
-              <input type="radio" name="gender" value="nodejs" /> NodeJS
-            </ul>
-            <ul>
-              <input type="radio" name="gender" value="html" /> HTML5/CSS3
-            </ul>
-            <ul>
-              <input type="radio" name="gender" value="mongodb" /> MongoDB
-            </ul>
-          </ul>
-          <ul>
-            <h5 className="title"> Filter by Price </h5>
+          <form onSubmit={this.handleFormSubmit}>
             <ul className="title">
-              <input type="radio" name="gender" value="1" />
-              0€ - 9€
+              <h5 className="title"> Filter by Content Category </h5>{' '}
+              <ul>
+                <label>
+                  <input
+                    type="radio"
+                    name="bookcategory"
+                    value="react"
+                    onChange={this.handleOptionChange}
+                  />{' '}
+                  React
+                </label>
+              </ul>
+              <ul>
+                <label>
+                  <input
+                    type="radio"
+                    name="bookcategory"
+                    value="javascript"
+                    onChange={this.handleOptionChange}
+                  />{' '}
+                  JavaScript
+                </label>
+              </ul>
+              <ul>
+                <label>
+                  <input
+                    type="radio"
+                    name="bookcategory"
+                    value="express"
+                    onChange={this.handleOptionChange}
+                  />{' '}
+                  Express
+                </label>
+              </ul>
+              <ul>
+                <label>
+                  <input
+                    type="radio"
+                    name="bookcategory"
+                    value="nodejs"
+                    onChange={this.handleOptionChange}
+                  />{' '}
+                  NodeJS
+                </label>
+              </ul>
+              <ul>
+                <label>
+                  <input
+                    type="radio"
+                    name="bookcategory"
+                    value="html"
+                    onChange={this.handleOptionChange}
+                  />{' '}
+                  HTML5/CSS3
+                </label>
+              </ul>
+              <ul>
+                <label>
+                  <input
+                    type="radio"
+                    name="bookcategory"
+                    value="mongodb"
+                    onChange={this.handleOptionChange}
+                  />{' '}
+                  MongoDB
+                </label>
+              </ul>
             </ul>
-            <ul className="title">
-              <input type="radio" name="gender" value="2" /> 10€ - 19€
+
+            <ul>
+              <h5 className="title"> Filter by Price </h5>
+              <ul className="title">
+                <input type="radio" name="price" value="1" />
+                0€ - 9€
+              </ul>
+              <ul className="title">
+                <input type="radio" name="price" value="2" /> 10€ - 19€
+              </ul>
+              <ul className="title">
+                <input type="radio" name="price" value="3" /> 20€ - 29€
+              </ul>
+              <ul className="title">
+                <input type="radio" name="price" value="4" /> 30€ - 39€
+              </ul>
+              <ul className="title">
+                <input type="radio" name="price" value="5" /> +40€
+              </ul>
             </ul>
-            <ul className="title">
-              <input type="radio" name="gender" value="3" /> 20€ - 29€
-            </ul>
-            <ul className="title">
-              <input type="radio" name="gender" value="4" /> 30€ - 39€
-            </ul>
-            <ul className="title">
-              <input type="radio" name="gender" value="5" /> +40€
-            </ul>
-          </ul>
+          </form>
         </Col>
         <Col className="col-8">
           <Row>
             <h2 className="title"> Books </h2>
           </Row>
           <Row>
-            <BookCard book={this.state.book} />
+            <BookCard book={this.state.book} value="react" />
             <BookCard book={this.state.book} />
             <BookCard book={this.state.book} />
           </Row>
