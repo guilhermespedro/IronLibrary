@@ -51,7 +51,7 @@ export default class CreateVideoView extends Component {
           <br />
         </div>
         <div className="d-flex justify-content-center p-1">
-          <Form className=" w-25 p-3" onSubmit={this.onFormSubmit}>
+          <Form className=" w-25 p-3 block-example border border-dark" onSubmit={this.onFormSubmit}>
             <Form.Group>
               <Form.Label>Title</Form.Label>
               <Form.Control 
@@ -79,7 +79,7 @@ export default class CreateVideoView extends Component {
             </Form.Group>
             <Form.Group size="sm">
               <Form.Label>Category</Form.Label>
-              <Form.Control 
+              <Form.Control as="select"
               placeholder="Category"
               name="category"
               type="text"
@@ -89,7 +89,12 @@ export default class CreateVideoView extends Component {
             </Form.Group>
             <Form.Group size="sm">
               <Form.Label>URL</Form.Label>
-              <Form.Control name="file" type="uploadfile"></Form.Control>
+              <Form.Control 
+              name="file" 
+              type="uploadfile"
+              placeholder="URL"
+              >
+              </Form.Control>
             </Form.Group>
 
             <Button type="submit">Upload Video</Button>
