@@ -23,7 +23,7 @@
 
 body {
   margin: 0;
-  padding: 50px;
+  /* padding: 50px; */
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
   z-index: 2;
@@ -95,5 +95,4 @@ card-img-top {
 
 /* .navi {
   position: fixed;
-  opacity: 0.7;
 } */
