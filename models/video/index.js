@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const videoSchema = new mongoose.Schema(
   {
@@ -12,11 +12,7 @@ const videoSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: ["HTML", "CSS", "JAVASCRIPT", "MONGODB", "NODE", "REACT", "EXPRESS"]
-    },
-    description: {
-      type: String,
-      trim: true
+      enum: ['HTML', 'CSS', 'JAVASCRIPT', 'MONGODB', 'NODE', 'REACT', 'EXPRESS']
     },
     duration: {
       type: String,
@@ -24,7 +20,7 @@ const videoSchema = new mongoose.Schema(
     },
     url: {
       type: String,
-      trim: true
+      required: true
     }
   },
   {
@@ -32,12 +28,12 @@ const videoSchema = new mongoose.Schema(
   }
 );
 
-const findByUrlStatic = require("./statics/find-by-url");
-const createVideoStatic = require("./statics/create");
+const findByUrlStatic = require('./statics/find-by-url');
+const createVideoStatic = require('./statics/create');
 
 videoSchema.statics.findByUrl = findByUrlStatic;
 videoSchema.statics.createVideo = createVideoStatic;
 
-const Video = mongoose.model("Video", videoSchema);
+const Video = mongoose.model('Video', videoSchema);
 
 module.exports = Video;

@@ -131,7 +131,7 @@ export default class App extends Component {
                 )}
               />
               <ProtectedRoute
-                path="/singlevideo"
+                path="/singlevideo/:id"
                 verify={this.verifyAuthenticated}
                 render={props => (
                   <SingleVideoView {...props} exact loadUser={this.loadUser} />

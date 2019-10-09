@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Form from "react-bootstrap/Form";
+import Form from 'react-bootstrap/Form';
 
-export default class PostForm extends Component {
+export default class EditUserForm extends Component {
   constructor(props) {
     super(props);
     this.onValueChange = this.onValueChange.bind(this);

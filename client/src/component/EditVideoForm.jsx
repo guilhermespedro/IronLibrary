@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Form from 'react-bootstrap/Form';
 
-export default class EditBookForm extends Component {
+export default class EditVideoForm extends Component {
   constructor(props) {
     super(props);
     this.onValueChange = this.onValueChange.bind(this);
@@ -26,6 +26,24 @@ export default class EditBookForm extends Component {
     return (
       <Form onSubmit={this.onFormSubmit}>
         <Form.Group>
+          <Form.Label>Title</Form.Label>
+          <Form.Control
+            className="bg-dark text-white"
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={this.props.value.title}
+            onChange={this.onValueChange}
+          />
+          <Form.Label>Duration</Form.Label>
+          <Form.Control
+            className="bg-dark text-white"
+            type="text"
+            name="duration"
+            placeholder="Duration"
+            value={this.props.value.duration}
+            onChange={this.onValueChange}
+          />
           <Form.Label>Category</Form.Label>
           <Form.Control
             className="bg-dark text-white"
@@ -41,24 +59,6 @@ export default class EditBookForm extends Component {
             <option>REACT</option>
             <option>EXPRESS</option>
           </Form.Control>
-          <Form.Label>Amazon Link</Form.Label>
-          <Form.Control
-            className="bg-dark text-white"
-            type="text"
-            name="link"
-            placeholder="Amazon"
-            value={this.props.value.link}
-            onChange={this.onValueChange}
-          />
-          <Form.Label>Price</Form.Label>
-          <Form.Control
-            className="bg-dark text-white"
-            type="text"
-            name="price"
-            placeholder="Price"
-            value={this.props.value.price}
-            onChange={this.onValueChange}
-          />
         </Form.Group>
       </Form>
     );

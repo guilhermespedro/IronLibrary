@@ -80,7 +80,7 @@ export default class SingleBook extends Component {
   deleteBook() {
     removeBookApi(this.state.book.isbn)
       .then(book => {
-        this.props.history.push('/');
+        this.props.history.push('/library');
       })
       .catch(error => {
         console.log(error);
@@ -90,7 +90,6 @@ export default class SingleBook extends Component {
   render() {
     const book = this.state.book;
     const user = this.state.user;
-    console.log(user);
     return (
       <div className="d-flex justify-content-center p-5">
         {book && (
