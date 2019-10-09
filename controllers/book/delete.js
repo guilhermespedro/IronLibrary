@@ -1,17 +1,17 @@
-"use strict";
+'use strict';
 
-const Book = require("../../models/book");
+const Book = require('../../models/book');
 
 module.exports = (req, res, next) => {
-  const id = req.params.id;
+  const isbn = req.params.isbn;
   Book.findOneAndDelete({
-    _id: id
+    isbn: isbn
   })
     .then(book => {
       if (book) {
-        res.json({ type: "success" });
+        res.json({ type: 'success' });
       } else {
-        next(new Error("BOOK_NOT_DELETED"));
+        next(new Error('BOOK_NOT_DELETED'));
       }
     })
     .catch(error => {

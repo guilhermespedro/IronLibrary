@@ -13,7 +13,7 @@ const bookSchema = new mongoose.Schema(
       trim: true
     },
     year: {
-      type: Number
+      type: String
     },
     description: {
       type: String,
@@ -25,14 +25,14 @@ const bookSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: ['HTML', 'CSS', 'JAVASCRIPT', 'MONGODB', 'NODE', 'REACT', 'EXPRESS']
+      enum: ['HTML/CSS', 'JAVASCRIPT', 'MONGODB', 'NODE', 'REACT', 'EXPRESS']
     },
     isbn: {
       type: String,
       required: true
     },
     price: {
-      type: Number,
+      type: String,
       required: true
     }
   },
