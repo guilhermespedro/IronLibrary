@@ -32,6 +32,7 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .primeiraimg {
@@ -60,6 +61,8 @@ body {
   background-size: cover;
   -o-background-size: cover;
 } */
+
+
 
 .headline {
   color: aliceblue;
