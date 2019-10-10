@@ -53,7 +53,6 @@ export default class Library extends Component {
     this.setState({
       checkPrice: value
     });
-    console.log(this.state.checkPrice);
   }
 
   render() {
