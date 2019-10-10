@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 
 export default props => (
   <Card style={{ width: '14rem' }}>
+    <pre></pre>
     <Card.Img
       variant="top"
       src={props.book.thumbnail.replace('zoom=1', 'zoom=0.5')}

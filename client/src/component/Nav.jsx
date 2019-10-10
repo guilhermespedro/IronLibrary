@@ -52,6 +52,9 @@ const NavBar = props => {
                   <Link to="/profile" className="btn-profile mr-2">
                     Profile
                   </Link>
+                  <Link to="/library" className="btn-signup">
+                    Library{' '}
+                  </Link>
                   <Button className="ml-4" onClick={props.logOut} type="submit">
                     Log Out
                   </Button>

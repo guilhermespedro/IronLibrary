@@ -4,30 +4,45 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import BookCard from '../component/bookCard';
 import VideoCard from '../component/videoCard';
-import { list as listService } from '../services/book-api';
-
 import LogIn from './LogIn';
+
+import { list as listBookApi } from './../services/book-api';
+import { list as listVideoApi } from './../services/video-api';
+
+import { Link } from 'react-router-dom';
 
 export default class HomeView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      book: null
+      books: [],
+      videos: []
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
   componentDidMount() {
-    listService(this.props.match.params.id)
-      .then(book => {
+    listBookApi()
+    .then(books => {
+      this.setState({
+        books
+      });
+    });
+    listVideoApi()
+      .then(videos => {
         this.setState({
-          book: book
+          videos
         });
       })
       .catch(error => {
         console.log(error);
       });
   }
+  handleChange(event) {
+    this.props.searchValue(event.target.value);
+  }
   render() {
-    if (!this.state.book) return <div>Loading...</div>;
+    if (!this.state.books) return <div>Loading...</div>;
     return (
       <div className="primeiraimg">
         <div className="d-flex flex-row justify-content-center p-5">
@@ -45,6 +60,15 @@ export default class HomeView extends Component {
               <h2 className="title"> React </h2>
             </Row>
             <Row className="justify-content-center justify-content-around">
+              {this.state.books.map(book => (
+                <Link
+                  className="text-decoration-none text-reset"
+                  to={`/singlebook/${book.isbn}`}
+                  key={book.isbn}
+                >
+                  <BookCard book={book} />
+                </Link>
+              ))}
               <BookCard book={this.state.book} />
               <BookCard book={this.state.book} />
               <BookCard book={this.state.book} />
