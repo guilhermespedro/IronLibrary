@@ -61,7 +61,7 @@ export default class HomeView extends Component {
                     {this.state.books
                       .filter(book => book.category === 'REACT')
                       .map(book => <BookCard book={book} key={book.isbn} />)
-                      .slice(0, 3)}
+                      .slice(0, 2)}
                   </Row>
                   <br></br>
                   <Row className="justify-content-center justify-content-around">
@@ -69,7 +69,53 @@ export default class HomeView extends Component {
                       .filter(video => video.category === 'REACT')
                       .map(video => <VideoCard key={video._id} video={video} />)
                       .slice(0, 3)}
-                    }
+                    
+                  </Row>
+                </Col>
+              </Row>
+            </Carousel.Item>
+            <Carousel.Item>
+              <Row>
+                <Col className=" align-self-center">
+                  <Image src="Node.png" />
+                </Col>
+                <Col>
+                  <Row className="justify-content-center justify-content-around">
+                    {this.state.books
+                      .filter(book => book.category === 'NODE')
+                      .map(book => <BookCard book={book} key={book.isbn} />)
+                      .slice(0, 2)}
+                  </Row>
+                  <br></br>
+                  <Row className="justify-content-center justify-content-around">
+                    {this.state.videos
+                      .filter(video => video.category === 'NODE')
+                      .map(video => <VideoCard key={video._id} video={video} />)
+                      .slice(0, 2)}
+                    
+                  </Row>
+                </Col>
+              </Row>
+            </Carousel.Item>
+            <Carousel.Item>
+              <Row>
+                <Col className=" align-self-center">
+                  <Image src="logo512.png" />
+                </Col>
+                <Col>
+                  <Row className="justify-content-center justify-content-around">
+                    {this.state.books
+                      .filter(book => book.category === 'REACT')
+                      .map(book => <BookCard book={book} key={book.isbn} />)
+                      .slice(0, 2)}
+                  </Row>
+                  <br></br>
+                  <Row className="justify-content-center justify-content-around">
+                    {this.state.videos
+                      .filter(video => video.category === 'REACT')
+                      .map(video => <VideoCard key={video._id} video={video} />)
+                      .slice(0, 3)}
+                    
                   </Row>
                 </Col>
               </Row>
