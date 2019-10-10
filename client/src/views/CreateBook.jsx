@@ -86,14 +86,16 @@ export default class CreateProductView extends Component {
   render() {
     const book = this.state.book;
     return (
-      <div>
-        <div className="d-flex p-5">
+      <div className="title-createboook">
+        
+        <div className="d-flex justify-content-center p-5">
           <h3>Add a new Book</h3>
           <br />
         </div>
+  
         {book && <CreateBookComponent book={book} />}
-        <div className="d-flex p-1">
-          <Form className=" w-25 p-3" onSubmit={this.onFormSubmit}>
+        <div className="d-flex justify-content-center p-1">
+          <Form className=" w-25 p-3 block-example border border-dark" onSubmit={this.onFormSubmit}>
             <Form.Group size="sm">
               <Form.Label>ISBN</Form.Label>
               <Form.Control
