@@ -6,7 +6,6 @@ import { withRouter } from 'react-router';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const NavBar = props => {
-  console.log(props);
   return (
     <div>
       <div className="navi">

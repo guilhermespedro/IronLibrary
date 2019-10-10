@@ -6,7 +6,6 @@ import ReactPlayer from 'react-player';
 export default props => (
   <div>
     <Card className="m-3" style={{ width: '14rem' }}>
-      {console.log(props)}
       <ReactPlayer
         url={props.video.url}
         width="100%"
