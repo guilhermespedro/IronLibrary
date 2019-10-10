@@ -47,8 +47,8 @@ export default class Library extends Component {
     if (!this.state.book) return <div>Loading...</div>;
     return (
      
-      <div className="d-flex flex-row ">
-        <Col className="col-4">
+      <div className="d-flex flex-row justify-content-center p-5">
+        <Col className="col-4 justify-content-center justify-content-around">
           <form onSubmit={this.handleFormSubmit}>
             <ul className="title">
               <h5 className="title"> Filter by Content Category </h5>{' '}
@@ -141,19 +141,19 @@ export default class Library extends Component {
             </ul>
           </form>
         </Col>
-        <Col className="col-8">
-          <Row>
-            <h2 className="title"> Books </h2>
+        <Col className="col-8 justify-content-center justify-content-around ">
+          <Row className="justify-content-center justify-content-around">
+            <h2 className="title "> Books </h2>
           </Row>
-          <Row>
+          <Row className="justify-content-center justify-content-around">
             <BookCard book={this.state.book} value="react" />
             <BookCard book={this.state.book} />
             <BookCard book={this.state.book} />
           </Row>
-          <Row>
+          <Row className="justify-content-center justify-content-around">
             <h2 className="title"> Videos </h2>
           </Row>
-          <Row>
+          <Row className="justify-content-center justify-content-around">
             <VideoCard video={this.state.video} />
             <VideoCard video={this.state.video} />
             <VideoCard video={this.state.video} />
