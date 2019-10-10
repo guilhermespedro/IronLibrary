@@ -83,8 +83,10 @@ export default class Library extends Component {
                   ? book
                   : this.state.checkPrice
                   ? book.price
-                    ? Math.floor(book.price) === parseInt(this.state.checkPrice)
-                    : Math.floor(book.price) > parseInt(this.state.checkPrice)
+                    ? Math.floor(parseInt(book.price) / 10) ===
+                      parseInt(this.state.checkPrice)
+                    : Math.floor(parseInt(book.price) / 10) >
+                      parseInt(this.state.checkPrice)
                   : book
               )
               .map(book => (

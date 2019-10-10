@@ -113,7 +113,7 @@ export default class SingleBook extends Component {
                   )) || (
                     <div>
                       <Card.Text>Category: {book.category}</Card.Text>
-                      <Card.Text>Price: {book.price}</Card.Text>
+                      <Card.Text>Price: € {book.price}</Card.Text>
                     </div>
                   )}
                   <Card.Text>Published: {book.year}</Card.Text>
