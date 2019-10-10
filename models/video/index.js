@@ -12,7 +12,7 @@ const videoSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: ['HTML', 'CSS', 'JAVASCRIPT', 'MONGODB', 'NODE', 'REACT', 'EXPRESS']
+      enum: ['HTML/CSS', 'JAVASCRIPT', 'MONGODB', 'NODE', 'REACT', 'EXPRESS']
     },
     duration: {
       type: String,

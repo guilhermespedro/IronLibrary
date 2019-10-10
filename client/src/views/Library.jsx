@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import BookCard from '../component/bookCard';
 import VideoCard from '../component/videoCard';
-import { list as listService } from '../services/book-api';
+import { list as listBookApi } from '../services/book-api';
 
 export default class Library extends Component {
   constructor(props) {
@@ -19,10 +19,10 @@ export default class Library extends Component {
   }
 
   componentDidMount() {
-    listService(this.props.match.params.id)
-      .then(book => {
+    listBookApi()
+      .then(books => {
         this.setState({
-          book: book
+          books
         });
       })
       .catch(error => {
@@ -44,7 +44,7 @@ export default class Library extends Component {
   };
 
   render() {
-    if (!this.state.book) return <div>Loading...</div>;
+    if (!this.state.books) return <div>Loading...</div>;
     return (
       <label className="d-flex flex-row justify-content-center p-5">
         <div className="libfundo"> </div>
@@ -146,7 +146,7 @@ export default class Library extends Component {
             <h2 className="title "> Books </h2>
           </Row>
           <Row className="justify-content-center justify-content-around">
-            <BookCard book={this.state.book} value="react" />
+            <BookCard book={this.state.book} />
             <BookCard book={this.state.book} />
             <BookCard book={this.state.book} />
           </Row>
