@@ -39,18 +39,6 @@ export default class Library extends Component {
       });
   }
 
-  componentVideoDidMount() {
-    listVideoApi()
-      .then(videos => {
-        this.setState({
-          videos
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
-
   handleChange(event) {
     this.props.searchValue(event.target.value);
   }

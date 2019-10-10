@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import BookCard from '../component/bookCard';
-import VideoCard from '../component/videoCard';
-import LogIn from './LogIn';
 
 import { list as listBookApi } from './../services/book-api';
 import { list as listVideoApi } from './../services/video-api';
@@ -18,12 +16,10 @@ export default class HomeView extends Component {
       books: [],
       videos: []
     };
-    this.handleChange = this.handleChange.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
   }
   componentDidMount() {
-    listBookApi()
-    .then(books => {
+    listBookApi().then(books => {
       this.setState({
         books
       });
@@ -38,9 +34,7 @@ export default class HomeView extends Component {
         console.log(error);
       });
   }
-  handleChange(event) {
-    this.props.searchValue(event.target.value);
-  }
+
   render() {
     if (!this.state.books) return <div>Loading...</div>;
     return (
@@ -61,58 +55,29 @@ export default class HomeView extends Component {
             </Row>
             <Row className="justify-content-center justify-content-around">
               {this.state.books.map(book => (
-                <Link
-                  className="text-decoration-none text-reset"
-                  to={`/singlebook/${book.isbn}`}
-                  key={book.isbn}
-                >
-                  <BookCard book={book} />
-                </Link>
+                <BookCard book={book} key={book.isbn} />
               ))}
-              <BookCard book={this.state.book} />
-              <BookCard book={this.state.book} />
-              <BookCard book={this.state.book} />
             </Row>
             <Row className="justify-content-center justify-content-around">
               <h2 className="title"> Express </h2>
             </Row>
-            <Row className="justify-content-center justify-content-around">
-              <BookCard book={this.state.book} />
-              <BookCard book={this.state.book} />
-              <BookCard book={this.state.book} />
-            </Row>
+            <Row className="justify-content-center justify-content-around"></Row>
             <Row className="justify-content-center justify-content-around">
               <h2 className="title"> JavaScript </h2>
             </Row>
-            <Row className="justify-content-center justify-content-around">
-              <BookCard book={this.state.book} />
-              <BookCard book={this.state.book} />
-              <BookCard book={this.state.book} />
-            </Row>
+            <Row className="justify-content-center justify-content-around"></Row>
             <Row className="justify-content-center justify-content-around">
               <h2 className="title"> NodeJS </h2>
             </Row>
-            <Row className="justify-content-center justify-content-around">
-              <BookCard book={this.state.book} />
-              <BookCard book={this.state.book} />
-              <BookCard book={this.state.book} />
-            </Row>
+            <Row className="justify-content-center justify-content-around"></Row>
             <Row className="justify-content-center justify-content-around">
               <h2 className="title"> HTML5/CSS3 </h2>
             </Row>
-            <Row className="justify-content-center justify-content-around">
-              <BookCard book={this.state.book} />
-              <BookCard book={this.state.book} />
-              <BookCard book={this.state.book} />
-            </Row>
+            <Row className="justify-content-center justify-content-around"></Row>
             <Row className="justify-content-center justify-content-around">
               <h2 className="title"> MongoDB </h2>
             </Row>
-            <Row className="justify-content-center justify-content-around">
-              <BookCard book={this.state.book} />
-              <BookCard book={this.state.book} />
-              <BookCard book={this.state.book} />
-            </Row>
+            <Row className="justify-content-center justify-content-around"></Row>
           </Col>
         </div>
       </div>
