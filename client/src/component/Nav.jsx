@@ -1,17 +1,18 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
 import { withRouter } from 'react-router';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-const Nav = props => {
+const NavBar = props => {
   return (
     <div>
       <div className="navi">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-custom-2 mt-0">
-          <a className="navbar-brand" href="library">
+        <Nav className="navbar navbar-expand-lg navbar-dark bg-custom-2 mt-0">
+          <Link className="navbar-brand" to="/">
             Iron Library
-          </a>
+          </Link>
 
           <button
             className="navbar-toggler"
@@ -37,28 +38,28 @@ const Nav = props => {
                 </Fragment>
               )) || (
                 <Fragment>
-                  <Link to="/profile" className="btn-profile">
-                    User Profile
+                  <NavDropdown title="Create" id="nav-dropdown">
+                    <NavDropdown.Item eventKey="1">
+                      <Link to="/createbook">Add Book</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item eventKey="4.2">
+                      <Link to="/createvideo">Add Video</Link>
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <Link to="/profile" className="btn-profile mr-2">
+                    Profile
                   </Link>
-
-                  <Form onSubmit={props.logOut}>
-                    <Button type="submit">Log Out</Button>
-                  </Form>
+                  <Button className="ml-4" onClick={props.logOut} type="submit">
+                    Log Out
+                  </Button>
                 </Fragment>
               )}
             </div>
-            <ul className="navbar-nav ml-auto py-md-3">
-              <li className="nav-item active">
-                <a className="nav-link" href="/">
-                  Home<span className="sr-only">(current)</span>
-                </a>
-              </li>
-            </ul>
           </div>
-        </nav>
+        </Nav>
       </div>
     </div>
   );
 };
 
-export default withRouter(Nav);
+export default withRouter(NavBar);
