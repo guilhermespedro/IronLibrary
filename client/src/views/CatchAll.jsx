@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class CatchAllView extends Component {
   componentDidMount() {
-    this.props.history.push("/error/404");
+    this.props.history.push('/error/404');
   }
 
   render() {
