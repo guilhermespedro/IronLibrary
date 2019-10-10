@@ -19,7 +19,6 @@ export const list = () => {
 
 export const load = isbn => {
   return new Promise((resolve, reject) => {
-    console.log(isbn);
     bookApi
       .get(`/${isbn}`)
       .then(response => {
