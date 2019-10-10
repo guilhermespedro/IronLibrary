@@ -7,8 +7,6 @@ import BookCard from '../component/bookCard';
 import { list as listBookApi } from './../services/book-api';
 import { list as listVideoApi } from './../services/video-api';
 
-import { Link } from 'react-router-dom';
-
 export default class HomeView extends Component {
   constructor(props) {
     super(props);
@@ -54,30 +52,56 @@ export default class HomeView extends Component {
               <h2 className="title"> React </h2>
             </Row>
             <Row className="justify-content-center justify-content-around">
-              {this.state.books.map(book => (
-                <BookCard book={book} key={book.isbn} />
-              ))}
+              {this.state.books
+                .filter(book => book.category === 'REACT')
+                .map(book => <BookCard book={book} key={book.isbn} />)
+                .slice(0, 3)}
             </Row>
             <Row className="justify-content-center justify-content-around">
               <h2 className="title"> Express </h2>
             </Row>
-            <Row className="justify-content-center justify-content-around"></Row>
+            <Row className="justify-content-center justify-content-around">
+              {this.state.books
+                .filter(book => book.category === 'EXPRESS')
+                .map(book => <BookCard book={book} key={book.isbn} />)
+                .slice(0, 3)}
+            </Row>
             <Row className="justify-content-center justify-content-around">
               <h2 className="title"> JavaScript </h2>
             </Row>
-            <Row className="justify-content-center justify-content-around"></Row>
+            <Row className="justify-content-center justify-content-around">
+              {this.state.books
+                .filter(book => book.category === 'JAVASCRIPT')
+                .map(book => <BookCard book={book} key={book.isbn} />)
+                .slice(0, 3)}
+            </Row>
             <Row className="justify-content-center justify-content-around">
               <h2 className="title"> NodeJS </h2>
             </Row>
-            <Row className="justify-content-center justify-content-around"></Row>
+            <Row className="justify-content-center justify-content-around">
+              {this.state.books
+                .filter(book => book.category === 'NODE')
+                .map(book => <BookCard book={book} key={book.isbn} />)
+                .slice(0, 3)}
+            </Row>
             <Row className="justify-content-center justify-content-around">
               <h2 className="title"> HTML5/CSS3 </h2>
             </Row>
-            <Row className="justify-content-center justify-content-around"></Row>
+            <Row className="justify-content-center justify-content-around">
+              {this.state.books
+                .filter(book => book.category === 'HTML/CSS')
+                .map(book => <BookCard book={book} key={book.isbn} />)
+                .slice(0, 3)}
+            </Row>
             <Row className="justify-content-center justify-content-around">
               <h2 className="title"> MongoDB </h2>
             </Row>
-            <Row className="justify-content-center justify-content-around"></Row>
+            <Row className="justify-content-center justify-content-around">
+              {this.state.books
+                .filter(book => book.category === 'MONGODB')
+                .map(book => <BookCard book={book} key={book.isbn} />)
+                .slice(0, 3)}
+            </Row>
           </Col>
         </div>
       </div>
