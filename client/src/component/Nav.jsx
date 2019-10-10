@@ -6,6 +6,7 @@ import { withRouter } from 'react-router';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const NavBar = props => {
+  console.log(props);
   return (
     <div>
       <div className="navi">
@@ -38,14 +39,16 @@ const NavBar = props => {
                 </Fragment>
               )) || (
                 <Fragment>
-                  <NavDropdown title="Create" id="nav-dropdown">
-                    <NavDropdown.Item eventKey="1">
-                      <Link to="/createbook">Add Book</Link>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item eventKey="4.2">
-                      <Link to="/createvideo">Add Video</Link>
-                    </NavDropdown.Item>
-                  </NavDropdown>
+                  {props.user.role === 'admin' && (
+                    <NavDropdown title="Create" id="nav-dropdown">
+                      <NavDropdown.Item eventKey="1">
+                        <Link to="/createbook">Add Book</Link>
+                      </NavDropdown.Item>
+                      <NavDropdown.Item eventKey="4.2">
+                        <Link to="/createvideo">Add Video</Link>
+                      </NavDropdown.Item>
+                    </NavDropdown>
+                  )}
                   <Link to="/profile" className="btn-profile mr-2">
                     Profile
                   </Link>

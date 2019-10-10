@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
-import BookCard from '../component/bookCard';
-import VideoCard from '../component/videoCard';
-import { list as listBookApi } from '../services/book-api';
+import BookCard from './../component/bookCard';
+import VideoCard from './../component/videoCard';
+
+import { list as listBookApi } from './../services/book-api';
+import { list as listVideoApi } from './../services/video-api';
+
+import { Link } from 'react-router-dom';
 
 export default class Library extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      book: null
+      books: [],
+      videos: []
     };
     this.componentDidMount = this.componentDidMount.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -19,10 +23,27 @@ export default class Library extends Component {
   }
 
   componentDidMount() {
-    listBookApi()
-      .then(books => {
+    listBookApi().then(books => {
+      this.setState({
+        books
+      });
+    });
+    listVideoApi()
+      .then(videos => {
         this.setState({
-          books
+          videos
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  componentVideoDidMount() {
+    listVideoApi()
+      .then(videos => {
+        this.setState({
+          videos
         });
       })
       .catch(error => {
@@ -146,17 +167,29 @@ export default class Library extends Component {
             <h2 className="title "> Books </h2>
           </Row>
           <Row className="justify-content-center justify-content-around">
-            <BookCard book={this.state.book} />
-            <BookCard book={this.state.book} />
-            <BookCard book={this.state.book} />
+            {this.state.books.map(book => (
+              <Link
+                className="text-decoration-none text-reset"
+                to={`/singlebook/${book.isbn}`}
+                key={book.isbn}
+              >
+                <BookCard book={book} />
+              </Link>
+            ))}
           </Row>
           <Row className="justify-content-center justify-content-around">
             <h2 className="title"> Videos </h2>
           </Row>
           <Row className="justify-content-center justify-content-around">
-            <VideoCard video={this.state.video} />
-            <VideoCard video={this.state.video} />
-            <VideoCard video={this.state.video} />
+            {this.state.videos.map(video => (
+              <Link
+                className="text-decoration-none text-reset"
+                to={`/singlevideo/${video._id}`}
+                key={video._id}
+              >
+                <VideoCard video={video} />
+              </Link>
+            ))}
           </Row>
         </Col>
       </label>

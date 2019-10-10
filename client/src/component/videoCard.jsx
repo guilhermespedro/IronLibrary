@@ -1,26 +1,23 @@
-import React, { Component } from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import ReactPlayer from "react-player";
+import React, { Component } from 'react';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import ReactPlayer from 'react-player';
 
-export default class videoCard extends Component {
-  render() {
-    return (
-      <div>
-        <Card style={{ width: "14rem" }}>
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            width="100%"
-            height="10%"
-            volume="40%"
-          />
-          <Card.Body>
-            <Card.Title>Video Title</Card.Title>
-            <Card.Text>Video Description</Card.Text>
-            <Button variant="outline-primary">Watch the Video</Button>
-          </Card.Body>
-        </Card>
-      </div>
-    );
-  }
-}
+export default props => (
+  <div>
+    <Card style={{ width: '14rem' }}>
+      {console.log(props)}
+      <ReactPlayer
+        url={props.video.url}
+        width="100%"
+        height="10%"
+        volume="40%"
+      />
+      <Card.Body>
+        <Card.Title>{props.video.title}</Card.Title>
+        <Card.Text>{props.video.duration}</Card.Text>
+        <Card.Text>{props.video.category}</Card.Text>
+      </Card.Body>
+    </Card>
+  </div>
+);
