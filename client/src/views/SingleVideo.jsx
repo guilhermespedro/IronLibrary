@@ -28,7 +28,7 @@ export default class SingleVideo extends Component {
     };
     this.deleteVideo = this.deleteVideo.bind(this);
     this.onFormValueChange = this.onFormValueChange.bind(this);
-    // this.onEditBook = this.onEditBook.bind(this);
+    this.editVideo = this.editVideo.bind(this);
   }
 
   loadVideo() {
@@ -67,6 +67,20 @@ export default class SingleVideo extends Component {
     });
   }
 
+  editVideo(event) {
+    const { id, updatedVideo } = {
+      id: this.state.video._id,
+      updatedVideo: this.state.video
+    };
+    editVideoApi(id, updatedVideo)
+      .then(() => {
+        this.props.history.push(`/singleVideo/${id}`);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
   deleteVideo() {
     removeVideoApi(this.state.video._id)
       .then(video => {
@@ -94,8 +108,14 @@ export default class SingleVideo extends Component {
                   value={video}
                   onValueChange={this.onFormValueChange}
                 ></EditVideoForm>
-                <Button variant="outline-success">Edit</Button>
-                <Button onClick={this.deleteBook} variant="outline-danger">
+                <Button
+                  type="submit"
+                  variant="outline-success"
+                  onClick={this.editVideo}
+                >
+                  Edit
+                </Button>
+                <Button onClick={this.deleteVideo} variant="outline-danger">
                   Delete
                 </Button>
               </Card.Body>

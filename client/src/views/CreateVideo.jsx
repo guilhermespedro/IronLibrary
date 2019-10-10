@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { create as createVideoService } from './../services/video-api';
-// import { load as loadVideoApi } from "./../services/video-api";
+import {
+  create as createVideoApi,
+  load as loadVideoApi
+} from './../services/video-api';
 
 export default class CreateVideoView extends Component {
   constructor(props) {
@@ -25,14 +27,14 @@ export default class CreateVideoView extends Component {
   onFormSubmit(event) {
     event.preventDefault();
     const { title, duration, category, url } = this.state;
-    createVideoService({
+    createVideoApi({
       title,
       duration,
       category,
       url
     })
       .then(video => {
-        this.props.history.push(`/library}`);
+        this.props.history.push(`/singleVideo/${video._id}`);
       })
       .catch(error => {
         console.log(error);

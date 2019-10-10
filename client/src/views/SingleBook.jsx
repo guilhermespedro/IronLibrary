@@ -23,7 +23,7 @@ export default class SingleBook extends Component {
     };
     this.deleteBook = this.deleteBook.bind(this);
     this.onFormValueChange = this.onFormValueChange.bind(this);
-    this.onEditBook = this.onEditBook.bind(this);
+    this.editBook = this.editBook.bind(this);
   }
 
   loadBook() {
@@ -62,7 +62,7 @@ export default class SingleBook extends Component {
     });
   }
 
-  onEditBook(event) {
+  editBook(event) {
     // event.preventDefault();
     const { isbn, updatedBook } = {
       isbn: this.state.book.isbn,
@@ -129,7 +129,7 @@ export default class SingleBook extends Component {
                     <Button
                       type="submit"
                       variant="outline-success"
-                      onClick={this.onEditBook}
+                      onClick={this.editBook}
                     >
                       Edit
                     </Button>
