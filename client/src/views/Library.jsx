@@ -46,14 +46,14 @@ export default class Library extends Component {
   render() {
     if (!this.state.book) return <div>Loading...</div>;
     return (
-     
       <div className="d-flex flex-row justify-content-center p-5">
+        <div className="libfundo"> </div>
         <Col className="col-4 justify-content-center justify-content-around">
           <form onSubmit={this.handleFormSubmit}>
             <ul className="title">
               <h5 className="title"> Filter by Content Category </h5>{' '}
               <ul>
-                <label >
+                <label>
                   <input
                     type="radio"
                     name="bookcategory"
