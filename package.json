@@ -6,7 +6,9 @@
     "start": "node ./server",
     "dev": "nodemon ./server",
     "dev:debug": "DEBUG=react-blogging* npm run dev",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "cd client && npm install --production=false && npm run build && cd ..",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@ironh/eslint-config": "^0.0.2",

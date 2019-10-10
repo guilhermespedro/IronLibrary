@@ -46,7 +46,7 @@ export default class Library extends Component {
   render() {
     if (!this.state.book) return <div>Loading...</div>;
     return (
-      <div className="d-flex flex-row justify-content-center p-5">
+      <label className="d-flex flex-row justify-content-center p-5">
         <div className="libfundo"> </div>
         <Col className="col-4 justify-content-center justify-content-around">
           <form onSubmit={this.handleFormSubmit}>
@@ -159,7 +159,7 @@ export default class Library extends Component {
             <VideoCard video={this.state.video} />
           </Row>
         </Col>
-      </div>
+      </label>
     );
   }
 }
