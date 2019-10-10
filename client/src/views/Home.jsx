@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Carousel from 'react-bootstrap/Carousel';
 import BookCard from '../component/bookCard';
 
 import { list as listBookApi } from './../services/book-api';
@@ -47,7 +48,7 @@ export default class HomeView extends Component {
           </div>
         </div>
         <div className="primeiraimg d-flex flex-row justify-content-center ">
-          <Col className="col-8 ">
+          {/* <Col className="col-8 ">
             <Row className="justify-content-center justify-content-around">
               <h2 className="title"> React </h2>
             </Row>
@@ -102,7 +103,34 @@ export default class HomeView extends Component {
                 .map(book => <BookCard book={book} key={book.isbn} />)
                 .slice(0, 3)}
             </Row>
-          </Col>
+          </Col> */}
+
+          <Carousel>
+            <Carousel.Item>
+              <Row className="justify-content-center justify-content-around">
+                {this.state.books
+                  .filter(book => book.category === 'REACT')
+                  .map(book => <BookCard book={book} key={book.isbn} />)
+                  .slice(0, 2)}
+              </Row>
+            </Carousel.Item>
+            <Carousel.Item>
+              <Row className="justify-content-center justify-content-around">
+                {this.state.books
+                  .filter(book => book.category === 'EXPRESS')
+                  .map(book => <BookCard book={book} key={book.isbn} />)
+                  .slice(0, 2)}
+              </Row>
+            </Carousel.Item>
+            <Carousel.Item>
+              <Row className="justify-content-center justify-content-around">
+                {this.state.books
+                  .filter(book => book.category === 'JAVASCRIPT')
+                  .map(book => <BookCard book={book} key={book.isbn} />)
+                  .slice(0, 2)}
+              </Row>
+            </Carousel.Item>
+          </Carousel>
         </div>
       </div>
     );
