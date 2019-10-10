@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Carousel from 'react-bootstrap/Carousel';
+import Image from 'react-bootstrap/Image';
 import BookCard from '../component/bookCard';
+import VideoCard from './../component/videoCard';
 
 import { list as listBookApi } from './../services/book-api';
 import { list as listVideoApi } from './../services/video-api';
@@ -48,86 +50,28 @@ export default class HomeView extends Component {
           </div>
         </div>
         <div className="primeiraimg d-flex flex-row justify-content-center ">
-          {/* <Col className="col-8 ">
-            <Row className="justify-content-center justify-content-around">
-              <h2 className="title"> React </h2>
-            </Row>
-            <Row className="justify-content-center justify-content-around">
-              {this.state.books
-                .filter(book => book.category === 'REACT')
-                .map(book => <BookCard book={book} key={book.isbn} />)
-                .slice(0, 3)}
-            </Row>
-            <Row className="justify-content-center justify-content-around">
-              <h2 className="title"> Express </h2>
-            </Row>
-            <Row className="justify-content-center justify-content-around">
-              {this.state.books
-                .filter(book => book.category === 'EXPRESS')
-                .map(book => <BookCard book={book} key={book.isbn} />)
-                .slice(0, 3)}
-            </Row>
-            <Row className="justify-content-center justify-content-around">
-              <h2 className="title"> JavaScript </h2>
-            </Row>
-            <Row className="justify-content-center justify-content-around">
-              {this.state.books
-                .filter(book => book.category === 'JAVASCRIPT')
-                .map(book => <BookCard book={book} key={book.isbn} />)
-                .slice(0, 3)}
-            </Row>
-            <Row className="justify-content-center justify-content-around">
-              <h2 className="title"> NodeJS </h2>
-            </Row>
-            <Row className="justify-content-center justify-content-around">
-              {this.state.books
-                .filter(book => book.category === 'NODE')
-                .map(book => <BookCard book={book} key={book.isbn} />)
-                .slice(0, 3)}
-            </Row>
-            <Row className="justify-content-center justify-content-around">
-              <h2 className="title"> HTML5/CSS3 </h2>
-            </Row>
-            <Row className="justify-content-center justify-content-around">
-              {this.state.books
-                .filter(book => book.category === 'HTML/CSS')
-                .map(book => <BookCard book={book} key={book.isbn} />)
-                .slice(0, 3)}
-            </Row>
-            <Row className="justify-content-center justify-content-around">
-              <h2 className="title"> MongoDB </h2>
-            </Row>
-            <Row className="justify-content-center justify-content-around">
-              {this.state.books
-                .filter(book => book.category === 'MONGODB')
-                .map(book => <BookCard book={book} key={book.isbn} />)
-                .slice(0, 3)}
-            </Row>
-          </Col> */}
-
           <Carousel>
             <Carousel.Item>
-              <Row className="justify-content-center justify-content-around">
-                {this.state.books
-                  .filter(book => book.category === 'REACT')
-                  .map(book => <BookCard book={book} key={book.isbn} />)
-                  .slice(0, 2)}
-              </Row>
-            </Carousel.Item>
-            <Carousel.Item>
-              <Row className="justify-content-center justify-content-around">
-                {this.state.books
-                  .filter(book => book.category === 'EXPRESS')
-                  .map(book => <BookCard book={book} key={book.isbn} />)
-                  .slice(0, 2)}
-              </Row>
-            </Carousel.Item>
-            <Carousel.Item>
-              <Row className="justify-content-center justify-content-around">
-                {this.state.books
-                  .filter(book => book.category === 'JAVASCRIPT')
-                  .map(book => <BookCard book={book} key={book.isbn} />)
-                  .slice(0, 2)}
+              <Row>
+                <Col className=" align-self-center">
+                  <Image src="logo512.png" />
+                </Col>
+                <Col>
+                  <Row className="justify-content-center justify-content-around">
+                    {this.state.books
+                      .filter(book => book.category === 'REACT')
+                      .map(book => <BookCard book={book} key={book.isbn} />)
+                      .slice(0, 3)}
+                  </Row>
+                  <br></br>
+                  <Row className="justify-content-center justify-content-around">
+                    {this.state.videos
+                      .filter(video => video.category === 'REACT')
+                      .map(video => <VideoCard key={video._id} video={video} />)
+                      .slice(0, 3)}
+                    }
+                  </Row>
+                </Col>
               </Row>
             </Carousel.Item>
           </Carousel>
