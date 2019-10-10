@@ -111,15 +111,9 @@ card-img-top {
 }
 
 .libfundo {
-  /* margin: 0;
-  padding: 50px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  position: relative;
-  z-index: 2; */
   background: url('/images/space-bg1') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  /* height: 100vh; */
 }

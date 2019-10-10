@@ -1,16 +1,16 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-import { logIn as logInService } from "./../services/authentication-api";
+import { logIn as logInService } from './../services/authentication-api';
 
 export default class LogInView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: ""
+      email: '',
+      password: ''
     };
     this.onValueChange = this.onValueChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -33,7 +33,7 @@ export default class LogInView extends Component {
     })
       .then(user => {
         this.props.loadUser(user);
-        this.props.history.push("/library/");
+        this.props.history.push('/library/');
       })
       .catch(error => {
         console.log(error);
@@ -52,7 +52,7 @@ export default class LogInView extends Component {
             onSubmit={this.onFormSubmit}
           >
             <Form.Group size="sm">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
                 placeholder="Email"
                 name="email"
