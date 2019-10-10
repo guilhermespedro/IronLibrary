@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Carousel from 'react-bootstrap/Carousel';
 import Image from 'react-bootstrap/Image';
 import BookCard from '../component/bookCard';
-import VideoCard from './../component/videoCard';
+import VideoCard from '../component/videoCard';
 
 import { list as listBookApi } from './../services/book-api';
 import { list as listVideoApi } from './../services/video-api';
