@@ -40,7 +40,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   position: relative;
   z-index: 2;
-  background: url('/images/finished') no-repeat center center fixed;
+  background: url('/images/finished.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -51,10 +51,10 @@ body {
 /* .homepage {
   margin: 0;
   padding: 50px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   position: relative;
   z-index: 2;
-  background: url("/images/space-bg1.jpg") no-repeat center center fixed;
+  background: url('/images/space-bg1.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

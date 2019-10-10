@@ -29,9 +29,9 @@ export default class HomeView extends Component {
   render() {
     if (!this.state.book) return <div>Loading...</div>;
     return (
-      <div>
+      <div className="primeiraimg">
         <div className="d-flex flex-row justify-content-center p-5">
-          <div className="headline">
+          <div className=" primeiraimg headline">
             <br></br>
             <br></br>
             <br></br>
@@ -39,60 +39,57 @@ export default class HomeView extends Component {
             <p>Explore the most demanding coding languages in the world</p>
           </div>
         </div>
-        <div className="primeiraimg"></div>
-        <div>
-          <div className="d-flex flex-row justify-content-center ">
-            <Col className="col-8 ">
-              <Row className="justify-content-center justify-content-around">
-                <h2 className="title"> React </h2>
-              </Row>
-              <Row className="justify-content-center justify-content-around">
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-              </Row>
-              <Row className="justify-content-center justify-content-around">
-                <h2 className="title"> Express </h2>
-              </Row>
-              <Row className="justify-content-center justify-content-around">
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-              </Row>
-              <Row className="justify-content-center justify-content-around">
-                <h2 className="title"> JavaScript </h2>
-              </Row>
-              <Row className="justify-content-center justify-content-around">
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-              </Row>
-              <Row className="justify-content-center justify-content-around">
-                <h2 className="title"> NodeJS </h2>
-              </Row>
-              <Row className="justify-content-center justify-content-around">
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-              </Row>
-              <Row className="justify-content-center justify-content-around">
-                <h2 className="title"> HTML5/CSS3 </h2>
-              </Row>
-              <Row className="justify-content-center justify-content-around">
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-              </Row>
-              <Row className="justify-content-center justify-content-around">
-                <h2 className="title"> MongoDB </h2>
-              </Row>
-              <Row className="justify-content-center justify-content-around">
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-                <BookCard book={this.state.book} />
-              </Row>
-            </Col>
-          </div>
+        <div className="primeiraimg d-flex flex-row justify-content-center ">
+          <Col className="col-8 ">
+            <Row className="justify-content-center justify-content-around">
+              <h2 className="title"> React </h2>
+            </Row>
+            <Row className="justify-content-center justify-content-around">
+              <BookCard book={this.state.book} />
+              <BookCard book={this.state.book} />
+              <BookCard book={this.state.book} />
+            </Row>
+            <Row className="justify-content-center justify-content-around">
+              <h2 className="title"> Express </h2>
+            </Row>
+            <Row className="justify-content-center justify-content-around">
+              <BookCard book={this.state.book} />
+              <BookCard book={this.state.book} />
+              <BookCard book={this.state.book} />
+            </Row>
+            <Row className="justify-content-center justify-content-around">
+              <h2 className="title"> JavaScript </h2>
+            </Row>
+            <Row className="justify-content-center justify-content-around">
+              <BookCard book={this.state.book} />
+              <BookCard book={this.state.book} />
+              <BookCard book={this.state.book} />
+            </Row>
+            <Row className="justify-content-center justify-content-around">
+              <h2 className="title"> NodeJS </h2>
+            </Row>
+            <Row className="justify-content-center justify-content-around">
+              <BookCard book={this.state.book} />
+              <BookCard book={this.state.book} />
+              <BookCard book={this.state.book} />
+            </Row>
+            <Row className="justify-content-center justify-content-around">
+              <h2 className="title"> HTML5/CSS3 </h2>
+            </Row>
+            <Row className="justify-content-center justify-content-around">
+              <BookCard book={this.state.book} />
+              <BookCard book={this.state.book} />
+              <BookCard book={this.state.book} />
+            </Row>
+            <Row className="justify-content-center justify-content-around">
+              <h2 className="title"> MongoDB </h2>
+            </Row>
+            <Row className="justify-content-center justify-content-around">
+              <BookCard book={this.state.book} />
+              <BookCard book={this.state.book} />
+              <BookCard book={this.state.book} />
+            </Row>
+          </Col>
         </div>
       </div>
     );
