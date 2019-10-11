@@ -29,12 +29,16 @@ const NavBar = props => {
             <div className="d-flex flex-row collapse navbar-collapse justify-content-end">
               {(!props.user && (
                 <Fragment>
-                  <Link to="/login" className="btn-login">
-                    Log In
-                  </Link>
-                  <Link to="/signup" className="btn-signup">
-                    Sign Up
-                  </Link>
+                  <Button type="submit" variant="outline-success mr-2">
+                    <Link to="/login" className="btn-login ">
+                      LogIn
+                    </Link>
+                  </Button>
+                  <Button type="submit" variant="primary">
+                    <Link to="/signup" className="btn-signup">
+                      SignUp
+                    </Link>
+                  </Button>
                 </Fragment>
               )) || (
                 <Fragment>
