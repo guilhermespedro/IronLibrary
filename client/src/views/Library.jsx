@@ -83,6 +83,7 @@ export default class Library extends Component {
           <Row className="justify-content-center justify-content-around">
             <h2 className="title "> Books </h2>
           </Row>
+          <br />
           <Row className="justify-content-center justify-content-around">
             {this.state.books
               .filter(book =>
@@ -109,13 +110,18 @@ export default class Library extends Component {
                   to={`/singlebook/${book.isbn}`}
                   key={book.isbn}
                 >
-                  <BookCard book={book} />
+                  <BookCard className="p-3" book={book} />
                 </Link>
               ))}
           </Row>
+          <br />
+          <br />
+          <br />
+
           <Row className="justify-content-center justify-content-around">
             <h2 className="title"> Videos </h2>
           </Row>
+          <br />
           <Row className="justify-content-center justify-content-around">
             {this.state.videos
               .filter(video =>
@@ -138,7 +144,7 @@ export default class Library extends Component {
                   to={`/singlevideo/${video._id}`}
                   key={video._id}
                 >
-                  <VideoCard video={video} />
+                  <VideoCard className="p-3" video={video} />
                 </Link>
               ))}
           </Row>
