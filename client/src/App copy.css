@@ -33,6 +33,7 @@ body {
   background-size: cover;
   -o-background-size: cover;
   font-family: 'Handlee', cursive;
+  
 }
 
 .primeiraimg {
@@ -106,9 +107,14 @@ card-img-top {
   float: right;
 } */
 
-.headline {
-  color: blueviolet;
-  font-family: fantasy;
+.primeiraimg-headline {
+  color: rgb(88, 202, 237);
+  font-family: 'Permanent Marker', cursive;
+}
+
+.primeiraimg-subheadline {
+  color: rgb(88, 202, 237);
+  font-family: 'Permanent Marker', cursive;
 }
 
 .libfundo {
