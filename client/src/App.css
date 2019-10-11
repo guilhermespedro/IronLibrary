@@ -1,7 +1,8 @@
-/* .App {
-  text-align: center;
+.App {
+  overflow: hidden;
 }
 
+/* 
 .App-logo {
   height: 40vmin;
 }
@@ -33,7 +34,6 @@ body {
   background-size: cover;
   -o-background-size: cover;
   font-family: 'Handlee', cursive;
-  
 }
 
 .primeiraimg {
@@ -110,11 +110,13 @@ card-img-top {
 .primeiraimg-headline {
   color: rgb(88, 202, 237);
   font-family: 'Permanent Marker', cursive;
+  font-size: 450%;
 }
 
 .primeiraimg-subheadline {
   color: rgb(88, 202, 237);
   font-family: 'Permanent Marker', cursive;
+  font-size: 250%;
 }
 
 .libfundo {
@@ -126,7 +128,7 @@ card-img-top {
 }
 
 .catcard {
-  opacity: 0.6;
+  opacity: 0.91;
   background-image: linear-gradient(15deg, #0c10ddc2 0%, #bd1044b9 40%);
 }
 

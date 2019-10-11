@@ -63,8 +63,15 @@ export default class Library extends Component {
         <Col className="col-4 justify-content-center justify-content-around">
           <Card className="catcard" style={{ width: '18rem' }} bg="info">
             <Card.Body>
-              <Card.Title>
+              <Card.Title className="title">
+                {' '}
+                Filter by Category
+                <br />
+                <br />
                 <CheckCategory toggleCheckCategory={this.toggleCheckCategory} />
+                <br />
+                <br />
+                Filter by Price
                 <br />
                 <br />
                 <CheckPrice toggleCheckPrice={this.toggleCheckPrice} />
@@ -116,6 +123,13 @@ export default class Library extends Component {
                   ? video
                   : this.state.checkCategory
                   ? video.category === this.state.checkCategory
+                  : video
+              )
+              .filter(video =>
+                this.state.checkPrice === 'all'
+                  ? video
+                  : this.state.checkPrice
+                  ? null
                   : video
               )
               .map(video => (

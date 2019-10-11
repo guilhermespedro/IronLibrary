@@ -41,26 +41,25 @@ export default class HomeView extends Component {
     return (
       <div className="primeiraimg">
         <div className="d-flex flex-row justify-content-center p-5">
-          <div >
+          <div>
             <div className="primeiraimg-headline">
-            <br></br>
-            <br></br>
-            <br></br>
-            <h1 className="d-flex justify-content-center">Iron Library</h1>
+              <br />
+              <p className="d-flex justify-content-center">Iron Library</p>
             </div>
             <div className="primeiraimg-subheadline">
-            <h5>Explore the most demanding coding languages in the world</h5>
+              <p>Explore the most demanding coding languages in the world</p>
             </div>
           </div>
         </div>
+        <div style={{ height: 800 }}></div>
         {/* <div className="primeiraimg d-flex flex-row justify-content-center "> */}
         <Carousel className="p-5 m-5 d-flex justify-content-center">
           <Carousel.Item>
             <Row>
               <Col className="col-4 align-self-center">
-                <Image style={{ width: 400 }} src="./images/React.png" />
+                <Image style={{ width: 350 }} src="./images/React.png" />
               </Col>
-              <Col className="col-8">
+              <Col>
                 <Row className="justify-content-center justify-content-around">
                   {this.state.books
                     .filter(book => book.category === 'REACT')
@@ -79,10 +78,10 @@ export default class HomeView extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <Row>
-              <Col className="col-4 align-self-center">
+              <Col className="align-self-center">
                 <Image style={{ width: 400 }} src="./images/Javascript.png" />
               </Col>
-              <Col className="col-8">
+              <Col>
                 <Row className="justify-content-center justify-content-around">
                   {this.state.books
                     .filter(book => book.category === 'JAVASCRIPT')
@@ -101,10 +100,10 @@ export default class HomeView extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <Row>
-              <Col className="col-4 align-self-center">
+              <Col className="align-self-center">
                 <Image style={{ width: 400 }} src="./images/nodejs.png" />
               </Col>
-              <Col className="col-8">
+              <Col>
                 <Row className="justify-content-center justify-content-around">
                   {this.state.books
                     .filter(book => book.category === 'NODE')
@@ -123,10 +122,10 @@ export default class HomeView extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <Row>
-              <Col className="col-4 align-self-center">
+              <Col className="align-self-center">
                 <Image style={{ width: 400 }} src="./images/HTML.png" />
               </Col>
-              <Col className="col-8">
+              <Col>
                 <Row className="justify-content-center justify-content-around">
                   {this.state.books
                     .filter(book => book.category === 'HTML/CSS')
@@ -145,10 +144,10 @@ export default class HomeView extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <Row>
-              <Col className="col-4 align-self-center">
+              <Col className="align-self-center">
                 <Image style={{ width: 400 }} src="./images/Express.png" />
               </Col>
-              <Col className="col-8">
+              <Col>
                 <Row className="justify-content-center justify-content-around">
                   {this.state.books
                     .filter(book => book.category === 'EXPRESS')
@@ -167,10 +166,10 @@ export default class HomeView extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <Row>
-              <Col className="col-4 align-self-center">
+              <Col className="align-self-center">
                 <Image style={{ width: 400 }} src="./images/MongoDB.png" />
               </Col>
-              <Col className="col-8">
+              <Col>
                 <Row className="justify-content-center justify-content-around">
                   {this.state.books
                     .filter(book => book.category === 'MONGODB')
