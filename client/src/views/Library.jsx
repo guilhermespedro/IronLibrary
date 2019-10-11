@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Card from 'react-bootstrap/Card';
 
 import BookCard from './../component/bookCard';
 import VideoCard from './../component/videoCard';
@@ -60,10 +61,16 @@ export default class Library extends Component {
     return (
       <Row className="p-5 m-5">
         <Col className="col-4 justify-content-center justify-content-around">
-          <CheckCategory toggleCheckCategory={this.toggleCheckCategory} />
-          <br />
-          <br />
-          <CheckPrice toggleCheckPrice={this.toggleCheckPrice} />
+          <Card className="catcard" style={{ width: '18rem' }} bg="info">
+            <Card.Body>
+              <Card.Title>
+                <CheckCategory toggleCheckCategory={this.toggleCheckCategory} />
+                <br />
+                <br />
+                <CheckPrice toggleCheckPrice={this.toggleCheckPrice} />
+              </Card.Title>
+            </Card.Body>
+          </Card>
         </Col>
         <Col className="col-8 justify-content-center justify-content-around ">
           <Row className="justify-content-center justify-content-around">

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 
 export default props => (
-  <Card bg="info" text="light" style={{ width: '14rem' }}>
+  <Card className="bookcard" bg="info" text="light" style={{ width: '14rem' }}>
     <pre></pre>
     <Card.Img
       variant="top"

@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 
 export default props => (
   <div>
-    <Form className="text-white">
+    <Form className="">
       <fieldset>
         <Form.Group>
           <Form.Check

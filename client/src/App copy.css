@@ -118,3 +118,16 @@ card-img-top {
   background-size: cover;
   -o-background-size: cover;
 }
+
+.catcard {
+  opacity: 0.6;
+  background-image: linear-gradient(15deg, #0c10ddc2 0%, #bd1044b9 40%);
+}
+
+.bookcard {
+  background-image: linear-gradient(15deg, #0c10ddc2 0%, #bd1044b9 40%);
+}
+
+.m-3 {
+  background-image: linear-gradient(15deg, #bd1044b9 0%, #0c0fc9ad 100%);
+}
