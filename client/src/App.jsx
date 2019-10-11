@@ -28,6 +28,7 @@ import CreateVideoView from './views/CreateVideo';
 
 import BookPopUpView from './component/bookPopUp';
 import Nav from './component/Nav';
+import Sound from './component/sound';
 
 export default class App extends Component {
   constructor(props) {
