@@ -55,7 +55,7 @@ export default class HomeView extends Component {
         <Carousel className="p-5 m-5 d-flex justify-content-center">
           <Carousel.Item>
             <Row>
-              <Col className="col-4 align-self-center">
+              <Col className="col-4 align-self-center d-flex justify-content-end">
                 <Image style={{ width: 350 }} src="./images/React.png" />
               </Col>
               <Col>
