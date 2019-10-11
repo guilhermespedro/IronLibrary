@@ -77,7 +77,7 @@ export default class HomeView extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <Row>
-              <Col className="align-self-center">
+              <Col className="col-4 align-self-center d-flex justify-content-end">
                 <Image style={{ width: 400 }} src="./images/Javascript.png" />
               </Col>
               <Col>
@@ -99,7 +99,7 @@ export default class HomeView extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <Row>
-              <Col className="align-self-center">
+              <Col className="col-4 align-self-center d-flex justify-content-end">
                 <Image style={{ width: 400 }} src="./images/nodejs.png" />
               </Col>
               <Col>
@@ -121,7 +121,7 @@ export default class HomeView extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <Row>
-              <Col className="align-self-center">
+              <Col className="col-4 align-self-center d-flex justify-content-end">
                 <Image style={{ width: 400 }} src="./images/HTML.png" />
               </Col>
               <Col>
@@ -143,7 +143,7 @@ export default class HomeView extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <Row>
-              <Col className="align-self-center">
+              <Col className="col-4 align-self-center d-flex justify-content-end">
                 <Image style={{ width: 400 }} src="./images/Express.png" />
               </Col>
               <Col>
@@ -165,7 +165,7 @@ export default class HomeView extends Component {
           </Carousel.Item>
           <Carousel.Item>
             <Row>
-              <Col className="align-self-center">
+              <Col className="col-4 align-self-center d-flex justify-content-end">
                 <Image style={{ width: 400 }} src="./images/MongoDB.png" />
               </Col>
               <Col>
