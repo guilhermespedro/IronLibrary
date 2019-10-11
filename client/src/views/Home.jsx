@@ -52,7 +52,6 @@ export default class HomeView extends Component {
           </div>
         </div>
         <div style={{ height: 800 }}></div>
-        {/* <div className="primeiraimg d-flex flex-row justify-content-center "> */}
         <Carousel className="p-5 m-5 d-flex justify-content-center">
           <Carousel.Item>
             <Row>
@@ -187,7 +186,6 @@ export default class HomeView extends Component {
             </Row>
           </Carousel.Item>
         </Carousel>
-        {/* </div> */}
       </div>
     );
   }
