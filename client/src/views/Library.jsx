@@ -110,7 +110,7 @@ export default class Library extends Component {
                   to={`/singlebook/${book.isbn}`}
                   key={book.isbn}
                 >
-                  <BookCard className="p-3" book={book} />
+                  <BookCard className="m-3" book={book} />
                 </Link>
               ))}
           </Row>
