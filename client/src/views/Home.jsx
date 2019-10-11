@@ -78,7 +78,7 @@ export default class HomeView extends Component {
           <Carousel.Item>
             <Row>
               <Col className="col-4 align-self-center d-flex justify-content-end">
-                <Image style={{ width: 400 }} src="./images/Javascript.png" />
+                <Image style={{ width: 350 }} src="./images/Javascript.png" />
               </Col>
               <Col>
                 <Row className="justify-content-center justify-content-around">
@@ -100,7 +100,7 @@ export default class HomeView extends Component {
           <Carousel.Item>
             <Row>
               <Col className="col-4 align-self-center d-flex justify-content-end">
-                <Image style={{ width: 400 }} src="./images/nodejs.png" />
+                <Image style={{ width: 350 }} src="./images/nodejs.png" />
               </Col>
               <Col>
                 <Row className="justify-content-center justify-content-around">
@@ -122,7 +122,7 @@ export default class HomeView extends Component {
           <Carousel.Item>
             <Row>
               <Col className="col-4 align-self-center d-flex justify-content-end">
-                <Image style={{ width: 400 }} src="./images/HTML.png" />
+                <Image style={{ width: 350 }} src="./images/HTML.png" />
               </Col>
               <Col>
                 <Row className="justify-content-center justify-content-around">
@@ -144,7 +144,7 @@ export default class HomeView extends Component {
           <Carousel.Item>
             <Row>
               <Col className="col-4 align-self-center d-flex justify-content-end">
-                <Image style={{ width: 400 }} src="./images/Express.png" />
+                <Image style={{ width: 350 }} src="./images/Express.png" />
               </Col>
               <Col>
                 <Row className="justify-content-center justify-content-around">
@@ -166,7 +166,7 @@ export default class HomeView extends Component {
           <Carousel.Item>
             <Row>
               <Col className="col-4 align-self-center d-flex justify-content-end">
-                <Image style={{ width: 400 }} src="./images/MongoDB.png" />
+                <Image style={{ width: 350 }} src="./images/MongoDB.png" />
               </Col>
               <Col>
                 <Row className="justify-content-center justify-content-around">
