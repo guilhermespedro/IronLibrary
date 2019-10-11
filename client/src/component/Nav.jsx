@@ -54,7 +54,12 @@ const NavBar = props => {
                   <Link to="/library" className="btn-signup">
                     Library{' '}
                   </Link>
-                  <Button className="ml-4" onClick={props.logOut} type="submit">
+                  <Button
+                    className="ml-4"
+                    onClick={props.logOut}
+                    type="submit"
+                    variant="outline-warning"
+                  >
                     Log Out
                   </Button>
                 </Fragment>
