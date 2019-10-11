@@ -25,8 +25,6 @@ import SingleVideoView from './views/SingleVideo';
 import LibraryView from './views/Library';
 import CreateBookView from './views/CreateBook';
 import CreateVideoView from './views/CreateVideo';
-import EditVideoView from './views/EditVideo';
-import EditBookView from './views/EditBook';
 
 import BookPopUpView from './component/bookPopUp';
 import Nav from './component/Nav';
@@ -107,10 +105,16 @@ export default class App extends Component {
                 component={ProfileView}
                 verify={this.verifyAuthenticated}
               />
-              <Route path="/createbook" component={CreateBookView} />
-              <Route path="/createvideo" component={CreateVideoView} />
-              <Route path="/editbook" component={EditBookView} />
-              <Route path="/editvideo" component={EditVideoView} />
+              <ProtectedRoute
+                verify={this.verifyAuthenticated}
+                path="/createbook"
+                component={CreateBookView}
+              />
+              <ProtectedRoute
+                verify={this.verifyAuthenticated}
+                path="/createvideo"
+                component={CreateVideoView}
+              />
               <ProtectedRoute
                 path="/signup"
                 verify={this.verifyUnauthenticated}
