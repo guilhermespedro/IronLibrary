@@ -26,7 +26,6 @@ import LibraryView from './views/Library';
 import CreateBookView from './views/CreateBook';
 import CreateVideoView from './views/CreateVideo';
 
-import BookPopUpView from './component/bookPopUp';
 import Nav from './component/Nav';
 
 export default class App extends Component {
@@ -141,7 +140,6 @@ export default class App extends Component {
                   <SingleVideoView {...props} exact loadUser={this.loadUser} />
                 )}
               />
-              <Route path="/bookpopup" component={BookPopUpView} />
               <Route path="/error/:code" component={ErrorView} />
               <Redirect path="/" to="/error/404" />
             </Switch>

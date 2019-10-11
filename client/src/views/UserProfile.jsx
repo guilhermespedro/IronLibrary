@@ -7,6 +7,7 @@ import {
 
 import EditUserForm from './../component/EditUserForm';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 export default class UserProfileView extends Component {
   constructor(props) {
@@ -28,7 +29,6 @@ export default class UserProfileView extends Component {
   }
 
   editUser(event) {
-    // event.preventDefault();
     const user = this.state.user;
     const id = user._id;
 
@@ -62,37 +62,33 @@ export default class UserProfileView extends Component {
     const user = this.state.user;
 
     return (
-      <div className="title ">
+      <div>
         <div className="d-flex justify-content-center p-4  ">
-          <ul>
-            <ul>
-              {' '}
-              <h2 className="title ">
-                <strong>Personal Information</strong>
-              </h2>
-            </ul>
-            <br></br>
-            <ul>
-              <h4 className="title">
-                <strong>Name:</strong> {user.name}
-              </h4>
-            </ul>
-            <ul>
-              <h4 className="title">
-                <strong>Email:</strong> {user.email}
-              </h4>
-            </ul>
-            <ul>
-              <h4 className="title">
-                <strong>Country:</strong> {user.country}
-              </h4>
-            </ul>
-            <ul>
-              <h4 className="title">
-                <strong>Phone Number:</strong> {user.phoneNumber}
-              </h4>
-            </ul>
-          </ul>
+          <div className="d-flex text-white justify-content-center p-4">
+            <Card className="profile" style={{ width: '28rem' }}>
+              <Card.Body className="align-self-center">
+                <Card.Title className="p-1 m-2">
+                  <strong>Name: </strong>
+                  {user.name}
+                </Card.Title>
+                <Card.Title className="p-1 m-2">
+                  {' '}
+                  <strong>Email: </strong>
+                  {user.email}
+                </Card.Title>
+                <Card.Title className="p-1 m-2">
+                  {' '}
+                  <strong>Country: </strong>
+                  {user.country}
+                </Card.Title>
+                <Card.Title className="p-1 m-2">
+                  {' '}
+                  <strong>Phone Number: </strong>
+                  {user.phoneNumber}
+                </Card.Title>
+              </Card.Body>
+            </Card>
+          </div>
         </div>
         <div className="d-flex justify-content-center p-4">
           <EditUserForm
@@ -100,9 +96,11 @@ export default class UserProfileView extends Component {
             onValueChange={this.onFormValueChange}
             onFormSubmit={this.editUser}
           >
-            <Button type="submit" className="btn btn-outline-primary btn-lg">
-              Edit
-            </Button>
+            <div className="d-flex justify-content-center">
+              <Button type="submit" variant="outline-primary">
+                Edit
+              </Button>
+            </div>
           </EditUserForm>
         </div>
       </div>
